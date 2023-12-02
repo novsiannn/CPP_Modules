@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 16:10:03 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/02 16:55:00 by novsiann         ###   ########.fr       */
+/*   Updated: 2023/12/02 22:01:51 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-
-void	PhoneBook::Search()
-{
-	PrintHead();
-}
 
 void	PhoneBook::PrintHead()
 {
@@ -24,40 +19,77 @@ void	PhoneBook::PrintHead()
 	std::cout << "---------------------------------------------" << std::endl;
 }
 
-void	Contact::Add()
+void	Contact::PrintContact(int index)
 {
-	int c = 0;
+	int i = 0;
+	int len;
+	int diff;
 
-	while(c < 5)
+	std::cout <<  "|";
+	std::cout << std::setw(10) << std::right << index;
+	while (i < 3)
 	{
-		std::cout << questions[c] << ": ";
-		getline(std::cin, this->data[c]);
-		data[c] = data[c].substr(0,9);
-		c++;
+		len = this->data[i].length();
+		diff = 10 - len;
+		std::cout << "|";
+		if (len >= 10)
+			std::cout << this->data[i].substr(0, 9) << ".";
+		else
+			std::cout << std::setw(10) << std::right << this->data[i].substr(0, 9);
+		i++;
 	}
-	c = 0;
-	while (c < 5)
-	{
-		std::cout << data[c];
-		c++;
-	}
-	std::cout << std::endl;
+	std::cout << "|" << std::endl;
 }
 
-void	exiting(void)
+void	Contact::AskIndex()
 {
-	std::cout << "Bye My Friend!" << std::endl;
-	exit(EXIT_SUCCESS);
+	int i = 0;
+
+	while (i < 5)
+	{
+		std::cout << this->questions[i] << ": ";
+		std::cout << this->data[i] << std::endl;
+		i++;
+	}
+}
+
+void	PhoneBook::Search()
+{
+	int con = 0;
+	int indexToFind = 0;
+	int i = this->num;
+
+	PrintHead();
+	if (i > 0)
+	{
+		while(con < i)
+		{
+			this->contacts[con].PrintContact(con + 1);
+			std::cout << "---------------------------------------------" << std::endl;
+			con++;
+		}
+		std::cout << "Give me index which u want to get: ";
+		std::cin >> indexToFind;
+		if (indexToFind.)
+			this->contacts[indexToFind - 1].AskIndex();
+		else
+			std::cout << "Wrong input" << std::endl;
+	}
+	else
+		std::cout << "We do not have Contacts in Phonebook." << std::endl;
+	
 }
 
 void	PhoneBook::ComandDefine(void)
 {
 	std::string cmd;
 	int i = 0;
-	int c = 0;
+	this->num = 0;
 
-	while(std::getline(std::cin, cmd))
+	while(true)
 	{
+		std::cout << "Next command: ";
+		std::getline(std::cin, cmd);
 		if (cmd == "SEARCH")
 			this->Search();
 		else if (cmd == "ADD")
@@ -69,20 +101,24 @@ void	PhoneBook::ComandDefine(void)
 			}
 			this->contacts[i].Add();
 			i++;
-			std::cout << i << " - It is iterator "<< std::endl;
+			if (i > this->num)
+				this->num = i;
 		}
 		else if(cmd == "EXIT")
 			exiting();
 		else
 			std::cout << "Command is unknown." << std::endl;
 	}
-	// if (cmd == "EXIT")
-	// 	std::cout << cmd << std::endl;	
 }
 
 int main()
 {
 	PhoneBook book;
 
+	std::cout << "Hi! It is a Phonebook. Here is programm usage:" << std::endl;
+	std::cout << "[ADD]- to add contact," << std::endl;
+	std::cout << "[SEARCH]- to search contact," << std::endl;
+	std::cout << "[EXIT]- to exit programm," << std::endl;
+	std::cout << "I am waiting for your commands <3" << std::endl; 
 	book.ComandDefine();
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:54:01 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/02 13:58:13 by novsiann         ###   ########.fr       */
+/*   Updated: 2023/12/02 20:25:42 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,3 +20,23 @@ std::string Contact::questions[5] =
 	"phone number",
 	"darkest secret"
 };
+
+void	Contact::Add()
+{
+	int c = 0;
+
+	while(c < 5)
+	{
+		std::cout << questions[c] << ": ";
+		getline(std::cin, this->data[c]);
+		this->data[c] = this->data[c];
+		c++;
+	}
+	std::cout << "Contact was succesfully added!" << std::endl;
+}
+
+void	exiting(void)
+{
+	std::cout << "Bye My Friend!" << std::endl;
+	exit(EXIT_SUCCESS);
+}
