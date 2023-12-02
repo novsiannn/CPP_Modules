@@ -6,7 +6,7 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 16:10:03 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/02 22:01:51 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/12/02 22:02:45 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	PhoneBook::Search()
 		}
 		std::cout << "Give me index which u want to get: ";
 		std::cin >> indexToFind;
-		if (indexToFind.)
+		if (indexToFind < 8)
 			this->contacts[indexToFind - 1].AskIndex();
 		else
 			std::cout << "Wrong input" << std::endl;
