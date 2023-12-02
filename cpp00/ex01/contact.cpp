@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phoneBook.hpp                                      :+:      :+:    :+:   */
+/*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 18:06:56 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/02 16:53:18 by novsiann         ###   ########.fr       */
+/*   Created: 2023/12/02 13:54:01 by novsiann          #+#    #+#             */
+/*   Updated: 2023/12/02 13:58:13 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "PhoneBook.hpp"
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
-
-#include <iostream>
-#include<iomanip>
-#include <string>
-
-class Contact{
-	public:
-		void	Add();
-	private:
-		std::string data[5];
-		static std::string questions[5];
+std::string Contact::questions[5] =
+{
+	"first name",
+	"last name",
+	"nickname",
+	"phone number",
+	"darkest secret"
 };
-
-class PhoneBook {
-	public:
-		void	ComandDefine();
-		void	Search();
-		void	PrintHead();
-	private:
-		Contact contacts[8];
-};
-
-#endif

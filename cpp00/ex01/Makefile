@@ -6,19 +6,19 @@
 #    By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/30 15:21:26 by nikitos           #+#    #+#              #
-#    Updated: 2023/12/01 16:28:28 by novsiann         ###   ########.fr        #
+#    Updated: 2023/12/02 13:53:57 by novsiann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= phonebook
 
-SRCS		:= main.cpp
+SRCS		:= main.cpp contact.cpp  
 
 OBJS		:= $(SRCS:.cpp=.o)
 
 BLUE		:= \033[1;34m
 
-# CFLAGS		:= -Wall -Werror -Wextra -std=c++98 -fsanitize=address
+CFLAGS		:= -Wall -Werror -Wextra -std=c++98 -fsanitize=address
 
 CC			:= c++
 
