@@ -6,13 +6,13 @@
 #    By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/03 16:01:35 by novsiann          #+#    #+#              #
-#    Updated: 2023/12/03 16:05:43 by novsiann         ###   ########.fr        #
+#    Updated: 2023/12/03 19:27:38 by novsiann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= account
 
-SRCS		:= tests.cpp
+SRCS		:= tests.cpp Account.cpp
 
 OBJS		:= $(SRCS:.cpp=.o)
 
@@ -35,7 +35,7 @@ $(NAME): $(OBJS)
                                                         
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) -c $< -o $@
 
 .PHONY: clean all re fclean
 
