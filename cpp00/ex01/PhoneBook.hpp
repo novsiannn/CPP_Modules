@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 18:06:56 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/03 15:03:24 by novsiann         ###   ########.fr       */
+/*   Updated: 2023/12/03 15:48:18 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class PhoneBook {
 		void	PrintHead();
 		void	FindIndex();
 		Contact contacts[8];
-		int		num;
+		int		_num;
 };
 
 void	exiting(void);

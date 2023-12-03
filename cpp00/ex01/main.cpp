@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 16:10:03 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/03 15:15:38 by novsiann         ###   ########.fr       */
+/*   Updated: 2023/12/03 15:51:22 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	PhoneBook::ComandDefine(void)
 {
 	std::string cmd;
 	int i = 0;
-	this->num = 0;
+	this->_num = 0;
 
 	while(true)
 	{
@@ -33,8 +33,8 @@ void	PhoneBook::ComandDefine(void)
 			}
 			this->contacts[i].Add();
 			i++;
-			if (i > this->num)
-				this->num = i;
+			if (i > this->_num)
+				this->_num = i;
 		}
 		else if(cmd == "EXIT")
 			exiting();

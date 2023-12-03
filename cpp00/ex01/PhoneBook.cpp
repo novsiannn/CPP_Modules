@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:01:49 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/03 15:15:54 by novsiann         ###   ########.fr       */
+/*   Updated: 2023/12/03 15:51:45 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	PhoneBook::Search()
 {
 	int con = 0;
-	int i = this->num;
+	int i = this->_num;
 
 	PrintHead();
 	if (i > 0)
@@ -54,7 +54,7 @@ void	PhoneBook::FindIndex()
 		}
 		else if(isdigit(indexToFind[0]) && stoi(indexToFind) < 9 && stoi(indexToFind) > 0)
 		{
-			if (stoi(indexToFind) <= this->num)
+			if (stoi(indexToFind) <= this->_num)
 				this->contacts[stoi(indexToFind) - 1].PrintIndex();
 			else
 			{
