@@ -6,13 +6,13 @@
 #    By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/30 15:21:26 by nikitos           #+#    #+#              #
-#    Updated: 2023/12/02 13:53:57 by novsiann         ###   ########.fr        #
+#    Updated: 2023/12/03 15:15:06 by novsiann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= phonebook
 
-SRCS		:= main.cpp contact.cpp  
+SRCS		:= Main.cpp Contact.cpp PhoneBook.cpp
 
 OBJS		:= $(SRCS:.cpp=.o)
 
@@ -35,7 +35,7 @@ $(NAME): $(OBJS)
                                                         
 
 %.o: %.cpp
-	$(CC)  -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: clean all re fclean
 
