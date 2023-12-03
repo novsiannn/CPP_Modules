@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   phoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 18:06:56 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/02 21:35:34 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/12/03 11:27:02 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Contact{
 	public:
 		void	Add();
 		void	PrintContact(int index);
-		void	AskIndex();
+		void	PrintIndex();
 	private:
 		std::string data[5];
 		static std::string questions[5];
@@ -33,6 +33,7 @@ class PhoneBook {
 		void	ComandDefine();
 		void	Search();
 		void	PrintHead();
+		void	FindIndex();
 	private:
 		Contact contacts[8];
 		int		num;

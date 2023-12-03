@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:54:01 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/02 20:25:42 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/12/03 11:29:03 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,16 @@ void	exiting(void)
 {
 	std::cout << "Bye My Friend!" << std::endl;
 	exit(EXIT_SUCCESS);
+}
+
+void	Contact::PrintIndex()
+{
+	int i = 0;
+
+	while (i < 5)
+	{
+		std::cout << this->questions[i] << ": ";
+		std::cout << this->data[i] << std::endl;
+		i++;
+	}
 }

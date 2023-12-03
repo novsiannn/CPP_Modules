@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 16:10:03 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/02 22:02:45 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/12/03 11:30:09 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,16 @@ void	Contact::PrintContact(int index)
 	std::cout << "|" << std::endl;
 }
 
-void	Contact::AskIndex()
+void	PhoneBook::FindIndex()
 {
-	int i = 0;
+	int indexToFind = 0;
 
-	while (i < 5)
-	{
-		std::cout << this->questions[i] << ": ";
-		std::cout << this->data[i] << std::endl;
-		i++;
-	}
+	std::cout << "Give me index which u want to get: ";
+	std::cin >> indexToFind;
+	if (indexToFind < 8)
+		this->contacts[indexToFind - 1].PrintIndex();
+	else
+		std::cout << "Wrong input" << std::endl;
 }
 
 void	PhoneBook::Search()
@@ -68,16 +68,10 @@ void	PhoneBook::Search()
 			std::cout << "---------------------------------------------" << std::endl;
 			con++;
 		}
-		std::cout << "Give me index which u want to get: ";
-		std::cin >> indexToFind;
-		if (indexToFind < 8)
-			this->contacts[indexToFind - 1].AskIndex();
-		else
-			std::cout << "Wrong input" << std::endl;
 	}
 	else
 		std::cout << "We do not have Contacts in Phonebook." << std::endl;
-	
+	this->FindIndex();
 }
 
 void	PhoneBook::ComandDefine(void)
