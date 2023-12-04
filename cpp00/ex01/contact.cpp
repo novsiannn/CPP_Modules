@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:54:01 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/03 15:15:30 by novsiann         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:16:49 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,14 +90,12 @@ void	Contact::PrintContact(int index)
 {
 	int i = 0;
 	int len;
-	int diff;
 
 	std::cout <<  "|";
 	std::cout << std::setw(10) << std::right << index;
 	while (i < 3)
 	{
 		len = this->data[i].length();
-		diff = 10 - len;
 		std::cout << "|";
 		if (len >= 10)
 			std::cout << this->data[i].substr(0, 9) << ".";

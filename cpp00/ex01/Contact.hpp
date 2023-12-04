@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 11:54:10 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/03 15:15:20 by novsiann         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:20:53 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class Contact{
 		void	Add();
 		void	PrintContact(int index);
 		void	PrintIndex();
-
 	private:
 		int		checkNumber(int c);
 		std::string data[5];
