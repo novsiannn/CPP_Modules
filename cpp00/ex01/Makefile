@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+         #
+#    By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/30 15:21:26 by nikitos           #+#    #+#              #
-#    Updated: 2023/12/03 15:15:06 by novsiann         ###   ########.fr        #
+#    Updated: 2023/12/04 15:08:51 by nikitos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= phonebook
 
-SRCS		:= Main.cpp Contact.cpp PhoneBook.cpp
+SRCS		:= Main.cpp contact.cpp phonebook.cpp
 
 OBJS		:= $(SRCS:.cpp=.o)
 
