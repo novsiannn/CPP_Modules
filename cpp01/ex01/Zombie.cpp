@@ -6,7 +6,7 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 18:22:22 by nikitos           #+#    #+#             */
-/*   Updated: 2023/12/05 18:47:15 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/12/05 18:53:37 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ void	Zombie::announce(void)
 void	Zombie::setName(std::string name)
 {
 	this->_name = name;
-	announce();
 }
