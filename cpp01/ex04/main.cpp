@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 10:36:50 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/06 16:59:29 by novsiann         ###   ########.fr       */
+/*   Updated: 2023/12/06 17:45:14 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ void	ft_replace(std::string *lines, std::string str1, std::string str2, size_t p
 
 int	execute_file(int ac, char **av)
 {
-	std::string file_name = av[1];
+	std::string fileName = av[1];
 	std::string str1 = av[2];
 	std::string str2 = av[3];
 
-	std::ifstream inputFile(file_name);
-	if(!inputFile.is_open())
+	std::ifstream inputFile(fileName);
+	if (!inputFile.is_open())
 	{
-		std::cout << "That file is not exist." << std::endl;
+		std::cout << "input file can not open." << std::endl; 
 		return (1);
 	}
 
@@ -37,19 +37,18 @@ int	execute_file(int ac, char **av)
 	strBuff << inputFile.rdbuf();
 	std::string inputFileLines = strBuff.str();
 
-	size_t pos = inputFileLines.find(str1, pos);
-	while (str1 != "" && pos != std::string::npos)
+	size_t pos = 0;
+	while(str1 != "" && (pos = inputFileLines.find(str1, pos)) != std::string::npos)
 	{
 		ft_replace(&inputFileLines, str1, str2, pos);
 		pos += str2.length();
-		pos = inputFileLines.find(str1, pos);
 	}
 	inputFile.close();
 
-	std::ofstream outputFile(file_name.append(".replace"));
+	std::ofstream outputFile(fileName.append(".replace"));
 	if (!outputFile.is_open())
 	{
-		std::cout << "Error with Output file opening." << std::endl;
+		std::cout << "output file can not open." << std::endl;
 		return (1);
 	}
 	outputFile << inputFileLines;
