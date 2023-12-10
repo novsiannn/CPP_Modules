@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 18:07:18 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/08 20:38:20 by novsiann         ###   ########.fr       */
+/*   Updated: 2023/12/10 13:48:40 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ class	Fixed
 		~Fixed();
 		Fixed(Fixed const &src);
 		Fixed &operator=(const Fixed &src);
-		void setRawBits( int const raw );
+
 		int getRawBits( void ) const;
+		void setRawBits( int const raw );
+
 	private:
-		int fix_point;
-		static const int frac_bits;
+		int					_numVal;
+		static const int	_frac_bits;
 		
 };
  
