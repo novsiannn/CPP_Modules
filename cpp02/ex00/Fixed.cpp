@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 19:36:54 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/10 14:12:37 by novsiann         ###   ########.fr       */
+/*   Updated: 2023/12/22 15:11:53 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Fixed::Fixed(Fixed const &src)
 
 Fixed &Fixed::operator=(const Fixed &src)
 {
-	std::cout << "Copy assigment called" << std::endl;
+	std::cout << "Copy assigment operator called" << std::endl;
 	setRawBits(src.getRawBits());
 	return (*this);
 }
