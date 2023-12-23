@@ -6,7 +6,7 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 18:07:18 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/22 19:28:17 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/12/23 19:36:30 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,27 @@ class	Fixed
 
 		Fixed	&operator=(const Fixed &src);
 
-		Fixed	operator*(Fixed const &src);
+		Fixed	operator*(Fixed const &src) const ;
+		Fixed	operator+(Fixed const &src) const ;
+		Fixed	operator-(Fixed const &src) const ;
+		Fixed	operator/(Fixed const &src) const ;
+		// Post-increment
+		Fixed	operator++(int);
+		Fixed	operator--(int);
+		Fixed	operator++();
+		Fixed	operator--();
+		
+		static	Fixed	&max(Fixed &a, Fixed &b);
+		static	Fixed	&min(Fixed &a, Fixed &b);
+		static	const	Fixed	&max(Fixed const &a, Fixed const &b);
+		static	const	Fixed	&min(Fixed const &a, Fixed const &b);
+
+		bool operator<(const Fixed &other) const;
+		bool operator>=(const Fixed &other) const;
+		bool operator<=(const Fixed &other) const;
+		bool operator>(const Fixed &other) const;
+		bool operator==(const Fixed &other) const;
+		bool operator!=(const Fixed &other) const;
 
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );

@@ -6,7 +6,7 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 19:36:54 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/22 19:53:48 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/12/23 19:35:44 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,43 +16,36 @@ const int Fixed::_frac_bits = 8;
 
 Fixed::Fixed()
 {
-	std::cout << "Default constructor called" << std::endl;
 	_numVal = 0;
 }
 
 Fixed::Fixed(const int val)
 {
-	std::cout << "Const int constructor called" << std::endl;
 	_numVal = val << _frac_bits;
 }
 
 Fixed::Fixed(const float val)
 {
-	std::cout << "Const Float constructor called" << std::endl;
 	_numVal = static_cast<int>(val * (1 << _frac_bits));
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const &src)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 }
 
 Fixed &Fixed::operator=(const Fixed &src)
 {
-	std::cout << "Copy assigment called" << std::endl;
 	setRawBits(src.getRawBits());
 	return (*this);
 }
 
 int Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (_numVal);
 }
 
@@ -78,9 +71,111 @@ std::ostream &operator<<(std::ostream &output, Fixed const &fixed) {
 
 // Arithmetic operators
 
-Fixed Fixed::operator*(Fixed const &src)
+Fixed Fixed::operator*(Fixed const &src) const
 {
 	Fixed	tmp(this->toFloat() * src.toFloat());
 	return tmp;
 }
 
+Fixed Fixed::operator+(Fixed const &src) const
+{
+	Fixed	tmp(this->toFloat() + src.toFloat());
+	return tmp;
+}
+
+Fixed Fixed::operator-(Fixed const &src) const
+{
+	Fixed	tmp(this->toFloat() - src.toFloat());
+	return tmp;
+}
+
+Fixed Fixed::operator/(Fixed const &src) const
+{
+	Fixed	tmp(this->toFloat() / src.toFloat());
+	return tmp;
+}
+
+// Post-in/de crement
+Fixed Fixed::operator++(int)
+{
+	Fixed tmp(*this);
+	this->_numVal++;
+	return tmp;
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed tmp(*this);
+	this->_numVal--;
+	return tmp;
+}
+
+//Pre-in/de crement
+
+Fixed Fixed::operator++()
+{
+	this->_numVal++;
+	return *this;
+}
+
+Fixed Fixed::operator--()
+{
+	this->_numVal--;
+	return *this;
+}
+
+// comparision operators
+
+bool Fixed::operator<(const Fixed &other) const {
+	return (this->_numVal < other._numVal);
+}
+
+bool Fixed::operator==(const Fixed &other) const {
+	return (this->_numVal == other._numVal);
+}
+
+bool Fixed::operator!=(const Fixed &other) const {
+	return (this->_numVal != other._numVal);
+}
+
+bool Fixed::operator>(const Fixed &other) const {
+	return (this->_numVal > other._numVal);
+}
+
+bool Fixed::operator>=(const Fixed &other) const {
+	return (this->_numVal >= other._numVal);
+}
+
+bool Fixed::operator<=(const Fixed &other) const {
+	return (this->_numVal <= other._numVal);
+}
+
+//static member function
+
+Fixed	&Fixed::max(Fixed &a, Fixed &b)
+{
+	if (a >= b)
+		return (a);
+	return (b);
+}
+
+const	Fixed	&Fixed::max(Fixed const &a, Fixed const &b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+Fixed	&Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+const	Fixed	&Fixed::min(Fixed const &a, Fixed const &b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
