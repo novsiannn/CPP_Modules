@@ -6,7 +6,7 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 19:36:54 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/23 19:35:44 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/12/24 15:02:29 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Fixed::Fixed(const int val)
 
 Fixed::Fixed(const float val)
 {
-	_numVal = static_cast<int>(val * (1 << _frac_bits));
+	_numVal = roundf(val * (1 << _frac_bits));
 }
 
 Fixed::~Fixed()
@@ -90,8 +90,13 @@ Fixed Fixed::operator-(Fixed const &src) const
 }
 
 Fixed Fixed::operator/(Fixed const &src) const
-{
-	Fixed	tmp(this->toFloat() / src.toFloat());
+{	
+	if (src == 0 || *this == 0)
+	{
+		std::cout << "Divide by 0 is unacceptable. Return value - ";
+		return 0;
+	}
+	Fixed tmp(this->toFloat() / src.toFloat());
 	return tmp;
 }
 
