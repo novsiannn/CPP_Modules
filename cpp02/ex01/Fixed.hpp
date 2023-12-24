@@ -6,7 +6,7 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 18:07:18 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/22 16:34:08 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/12/24 13:25:18 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FIXED_H
 
 #include <iostream>
+#include <cmath>
 
 class	Fixed
 {
