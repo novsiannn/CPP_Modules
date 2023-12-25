@@ -6,12 +6,14 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 17:22:19 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/25 17:40:51 by novsiann         ###   ########.fr       */
+/*   Updated: 2023/12/25 17:45:41 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
+
+// Leigtweight babyyyy
 
 int main( void ) {
 	Fixed a;
