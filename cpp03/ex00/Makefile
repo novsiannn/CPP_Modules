@@ -6,13 +6,13 @@
 #    By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/03 16:01:35 by novsiann          #+#    #+#              #
-#    Updated: 2023/12/08 19:48:22 by novsiann         ###   ########.fr        #
+#    Updated: 2023/12/25 19:00:05 by novsiann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= fixed
+NAME		:= claptrap
 
-SRCS		:= main.cpp Fixed.cpp
+SRCS		:= main.cpp ClapTrap.cpp
 
 OBJS		:= $(SRCS:.cpp=.o)
 
