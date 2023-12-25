@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 19:36:54 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/24 15:02:29 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/12/25 15:20:10 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,7 +159,7 @@ bool Fixed::operator<=(const Fixed &other) const {
 
 Fixed	&Fixed::max(Fixed &a, Fixed &b)
 {
-	if (a >= b)
+	if (a > b)
 		return (a);
 	return (b);
 }
