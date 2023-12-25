@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 17:22:19 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/22 15:15:53 by nikitos          ###   ########.fr       */
+/*   Updated: 2023/12/25 17:40:51 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int main( void ) {
 	Fixed a;
+
 	Fixed b( a );
 	Fixed c;
 
