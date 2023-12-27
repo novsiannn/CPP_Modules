@@ -6,13 +6,13 @@
 #    By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/03 16:01:35 by novsiann          #+#    #+#              #
-#    Updated: 2023/12/26 20:36:38 by nikitos          ###   ########.fr        #
+#    Updated: 2023/12/26 20:50:41 by nikitos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= scavtrap
+NAME		:= diamondtrap
 
-SRCS		:= main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS		:= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJS		:= $(SRCS:.cpp=.o)
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 13:14:48 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/26 17:36:56 by novsiann         ###   ########.fr       */
+/*   Updated: 2023/12/27 12:21:26 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	ScavTrap::attack( std::string name )
 		std::cout << "ScavTrap "<< cyan << this->_name << white << " attacking ";
 		std::cout << red << name << white << " with " << _attackDamage << " damage points." << std::endl;
 		this->_energy_p--;
-		std::cout << "Energy left: "<< _energy_p << std::endl;
 	}
 	else
 		std::cout << "ScavTrap "<< red << this->_name << white << " don't attacking, because he is tired. " << std::endl;
