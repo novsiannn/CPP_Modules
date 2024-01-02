@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/31 12:45:19 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/02 13:04:11 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,20 @@
 
 int main()
 {
-	//Subject tests
+	// Subject tests
 
-	// const Animal* meta = new Animal();
-	// const Animal* j = new Dog();
-	// const Animal* i = new Cat();
-	// std::cout << j->getType() << " " << std::endl;
-	// std::cout << i->getType() << " " << std::endl;
-	// std::cout << meta->getType() << " " << std::endl;
-	// i->makeSound(); //will output the cat sound!
-	// j->makeSound();
-	// meta->makeSound();
-	// delete j;
-	// delete meta;
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	std::cout << meta->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
+	delete j;
+	delete i;
+	delete meta;
 
 	//My tests
 
@@ -56,10 +57,12 @@ int main()
 	// Dog2.makeSound();
 	
 	// Wrong Animal and Cat tests.
-	const WrongAnimal* i = new WrongCat();
+	// const WrongAnimal* i = new WrongCat();
+	// WrongCat j;
 
-	i->makeWrongSound(); //will output the animal sound!
+	// j.makeWrongSound(); //will output the wrongcat sound with wrongcat class because we are not using virtual keyword.
+	// i->makeWrongSound(); //will output the animal sound with wronganimal class!
 
-	delete i;
+	// delete i;
 	// return 0;
 }
