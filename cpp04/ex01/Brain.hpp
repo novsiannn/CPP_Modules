@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 13:50:50 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/02 15:17:47 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/02 17:53:42 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ class Brain
 		Brain( std::string type );
 		Brain(const Brain &another);
 		Brain &operator=(Brain const &another);
+
+		int			getIndex( void ) const;
+		void		addThought( std::string thought );
+		std::string	getMemory( int i) const;
 	private:
 		std::string _ideas[100];
 		size_t _index;

@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 12:37:20 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/02 14:58:05 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/02 20:00:26 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,21 @@ Cat &Cat::operator=(Cat const &another)
 void	Cat::makeSound( void ) const
 {
 		std::cout << "MEOW MEOW BLYAT GIVE ME WHISKAS." << std::endl;
+}
+
+void	Cat::think( std::string thoughts ) const
+{
+	this->_brain->addThought( thoughts );
+}
+
+std::string	Cat::recall( int i ) const
+{
+	// std::cout << this->_brain->getIndex() << std::endl;
+	if ( i < this->_brain->getIndex() && i >= 0)
+	{
+		std::cout << "Cat: ";
+		return ( _brain->getMemory(i) );	
+	}
+	else
+		return ("I'm Cat and my brain can not think so much");
 }

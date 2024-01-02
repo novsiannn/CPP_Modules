@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 13:35:25 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/02 14:58:55 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/02 19:57:56 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,21 @@ Dog &Dog::operator=(Dog const &another)
 void	Dog::makeSound( void ) const
 {
 		std::cout << "BARK BARK GIVE ME A BEEF." << std::endl;
+}
+
+void	Dog::think( std::string thoughts ) const
+{
+	this->_brain->addThought( thoughts );
+}
+
+std::string	Dog::recall( int i ) const
+{
+	// std::cout << this->_brain->getIndex() << std::endl;
+	if ( i < this->_brain->getIndex() && i >= 0)
+	{
+		std::cout << "Dog: ";
+		return (  _brain->getMemory(i) );	
+	}
+	else
+		return ("I'm Dog and my brain can not think so much");
 }
