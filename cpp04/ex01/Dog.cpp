@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 13:35:25 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/04 13:19:16 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/06 13:47:57 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,16 @@ Dog::Dog(std::string type)
 
 Dog::~Dog()
 {
-	// here is malloc err need to install docker and on docker test it mith leaks
-	// if (_brain)
-	// 	delete _brain;
-	// _brain = NULL;
+	if (_brain )
+		delete _brain;
+	_brain = NULL;
 	std::cout << "Dog destructor called." << std::endl;
 }
 
 Dog::Dog(const Dog &another)
 {
-	*this = another;
 	std::cout << "Dog copy constructor called." << std::endl;
+	*this = another;
 }
 
 Dog &Dog::operator=(Dog const &another)
@@ -46,9 +45,9 @@ Dog &Dog::operator=(Dog const &another)
 	if (this == &another)
 		return *this;
 	this->_type = another.getType();
-    std::cout << "Dog copy operator called.\n";
-    _brain = new Brain();
-    _brain = another._brain;
+	_brain = new Brain;
+    *_brain = *another._brain;
+	std::cout << "Dog copy operator called.\n";
     return(*this);
 }
 

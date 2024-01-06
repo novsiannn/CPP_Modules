@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:14:34 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/02 19:28:31 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/06 12:33:21 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Dog : public Animal
 		void		think( std::string thoughts ) const;
 		std::string	recall( int i ) const;
 	private:
-		Brain* _brain;
+		Brain *_brain;
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 12:37:20 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/04 13:12:58 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/06 13:47:55 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@ Cat::Cat(std::string type)
 
 Cat::~Cat()
 {
-	if( this->_brain)
-		delete this->_brain;
+	if( _brain )
+		delete _brain;
 	this->_brain = NULL;
 	std::cout << "Cat destructor called." << std::endl;
 }
 
-Cat::Cat(const Cat &another) : Animal(another)
+Cat::Cat(const Cat &another)
 {
-	std::cout << "Cat copy constructor called." << std::endl;
+	std::cout << "Dog copy constructor called." << std::endl;
 	*this = another;
 }
 
@@ -45,9 +45,9 @@ Cat &Cat::operator=(Cat const &another)
 	if (this == &another)
 		return *this;
 	this->_type = another.getType();
+	_brain = new Brain;
+    *_brain = *another._brain;
     std::cout << "Dog copy operator called.\n";
-    _brain = new Brain();
-    _brain = another._brain;
     return(*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 13:50:55 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/02 19:49:47 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/06 14:28:23 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ Brain &Brain::operator=( Brain const &another )
 	{
 		if (!another._ideas[i].empty())
 			this->_ideas[i] = another._ideas[i];
-		i++;
 	}
 	return ( *this );
 }

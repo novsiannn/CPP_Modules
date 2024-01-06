@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/04 13:16:50 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/06 14:30:08 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,30 +19,28 @@
 int main()
 {
 	//Base tests
-	// const Animal* j = new Dog();
-	// const Animal* i = new Cat();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	// delete j;//should not create a leak
-	// delete i;
+	delete j;//should not create a leak
+	delete i;
 
 	// My tests with animals
 
-	// Animal *animals[10];
+	Animal *animals[10];
 
-	// for (int i = 0; i <	sizeof(animals) / 8; i ++)
-	// {
-	// 	if (i < 5)
-	// 		animals[i] = new Dog();
-	// 	else
-	// 		animals[i] = new Cat();
-
-	// 	std::cout << "s" << std::endl;
-	// }
-	// for (int i = 0; i <	sizeof(animals) / 8; i ++)
-	// {
-	// 	animals[i]->makeSound();
-	// 	delete animals[i];
-	// }
+	for (int i = 0; i <	sizeof(animals) / 8; i ++)
+	{
+		if (i < 5)
+			animals[i] = new Dog();
+		else
+			animals[i] = new Cat();
+	}
+	for (int i = 0; i <	sizeof(animals) / 8; i ++)
+	{
+		animals[i]->makeSound();
+		delete animals[i];
+	}
 
 	// another tests
 	// Cat Bobik;
@@ -86,13 +84,13 @@ int main()
 	// std::cout << Jack.recall(0) << std::endl;
 
 	// test for deep copy of copy operator
-	Dog braian("Nik");
-    braian.think("I am pretty.");
-	std::cout << braian.recall(0) << std::endl;
-	std::cout << "HAAAALLLOOOO" << std::endl;
-	Dog copyBraian = braian;
-	braian.~Dog();
-	copyBraian.makeSound();
-	std::cout << copyBraian.recall(0) << std::endl;
+	// Dog braian("Nik");
+    // braian.think("I am pretty.");
+	// std::cout << braian.recall(0) << std::endl;
+	// Dog copyBraian = braian;
+	// braian.~Dog();
+	// copyBraian.makeSound();
+	// std::cout << copyBraian.recall(0) << std::endl;
+
 	return 0;
 }
