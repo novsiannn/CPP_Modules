@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 13:35:25 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/02 19:57:56 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/04 13:19:16 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,17 @@ Dog::Dog(std::string type)
 
 Dog::~Dog()
 {
-	if( this->_brain)
-		delete this->_brain;
-	this->_brain = NULL;
+	// here is malloc err need to install docker and on docker test it mith leaks
+	// if (_brain)
+	// 	delete _brain;
+	// _brain = NULL;
 	std::cout << "Dog destructor called." << std::endl;
 }
 
 Dog::Dog(const Dog &another)
 {
-	std::cout << "Dog copy constructor called." << std::endl;
 	*this = another;
+	std::cout << "Dog copy constructor called." << std::endl;
 }
 
 Dog &Dog::operator=(Dog const &another)
@@ -45,14 +46,10 @@ Dog &Dog::operator=(Dog const &another)
 	if (this == &another)
 		return *this;
 	this->_type = another.getType();
-	if ( this->_brain )
-	{
-		delete this->_brain;
-		this->_brain = NULL; 
-	}
-	this->_brain = new Brain();
-	*this->_brain = *another._brain;
-	return (*this);
+    std::cout << "Dog copy operator called.\n";
+    _brain = new Brain();
+    _brain = another._brain;
+    return(*this);
 }
 
 void	Dog::makeSound( void ) const
@@ -67,11 +64,10 @@ void	Dog::think( std::string thoughts ) const
 
 std::string	Dog::recall( int i ) const
 {
-	// std::cout << this->_brain->getIndex() << std::endl;
 	if ( i < this->_brain->getIndex() && i >= 0)
 	{
 		std::cout << "Dog: ";
-		return (  _brain->getMemory(i) );	
+		return (  _brain->getMemory(i));	
 	}
 	else
 		return ("I'm Dog and my brain can not think so much");

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 12:37:20 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/02 20:00:26 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/04 13:12:58 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Cat::~Cat()
 	std::cout << "Cat destructor called." << std::endl;
 }
 
-Cat::Cat(const Cat &another)
+Cat::Cat(const Cat &another) : Animal(another)
 {
 	std::cout << "Cat copy constructor called." << std::endl;
 	*this = another;
@@ -45,15 +45,10 @@ Cat &Cat::operator=(Cat const &another)
 	if (this == &another)
 		return *this;
 	this->_type = another.getType();
-	if ( this->_brain )
-	{
-		delete this->_brain;
-		this->_brain = NULL; 
-	}
-	this->_brain = new Brain();
-	*this->_brain = *another._brain;
-	std::cout << "Cat copy asignment operator called." << std::endl;
-	return (*this);
+    std::cout << "Dog copy operator called.\n";
+    _brain = new Brain();
+    _brain = another._brain;
+    return(*this);
 }
 
 void	Cat::makeSound( void ) const

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/02 19:50:55 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/04 13:16:50 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ int main()
 	// Animal *sobaka = new Dog();
 	// delete sobaka;
 
-	// thinking tests for cat
+	// // thinking tests for cat
 	// Cat Lola;
 	// Lola.makeSound();
-	// // for (int i = 0; i < 110; i++)
+	// for (int i = 0; i < 110; i++)
 	// Lola.think("That life is so boring...");
 	// Lola.think("That");
 	// Lola.think("life");
@@ -65,29 +65,31 @@ int main()
 	// {
 	// 	std::cout << Lola.recall(i) << std::endl;
 	// }
-	// // Lola.think("That life is so boring...");
+	// Lola.think("That life is so boring...");
 	// std::cout << Lola.recall(0) << std::endl;
 
 	// thinking tests for dog
-	// Dog Lola;
+	// Dog Jack;
 
-	// Lola.makeSound();
-	// Lola.think("That life is so boring...");
-	// Lola.think("That");
-	// Lola.think("life");
-	// Lola.think("is");
-	// Lola.think("so");
-	// Lola.think("boring");
-	// Lola.think("...");
+	// Jack.makeSound();
+	// Jack.think("That life is so boring...");
+	// Jack.think("That");
+	// Jack.think("life");
+	// Jack.think("is");
+	// Jack.think("so");
+	// Jack.think("boring");
+	// Jack.think("...");
 	// for (int i = 0; i < 10; i++)
 	// {
-	// 	std::cout << Lola.recall(i) << std::endl;
+	// 	std::cout << Jack.recall(i) << std::endl;
 	// }
-	// std::cout << Lola.recall(0) << std::endl;
+	// std::cout << Jack.recall(0) << std::endl;
 
 	// test for deep copy of copy operator
-	Dog braian("Dog");
+	Dog braian("Nik");
     braian.think("I am pretty.");
+	std::cout << braian.recall(0) << std::endl;
+	std::cout << "HAAAALLLOOOO" << std::endl;
 	Dog copyBraian = braian;
 	braian.~Dog();
 	copyBraian.makeSound();
