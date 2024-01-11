@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:51:57 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/06 18:40:03 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/11 20:22:51 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,5 @@ std::string const &AMateria::getType() const
 {
 	return ( this->_type );
 }
+
+void AMateria::use(ICharacter& target){}

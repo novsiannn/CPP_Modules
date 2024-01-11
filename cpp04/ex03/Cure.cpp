@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 16:25:12 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/06 18:45:16 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/11 20:39:37 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ Cure::Cure()
 {
 	std::cout << "Cure default constructor called." << std::endl;
 	_type = "cure";
-	std::cout << "TYPE NORMAS" << std::endl;
-	std::cout << _type << std::endl;
 }
 
 Cure::Cure( std::string const &type )
@@ -44,4 +42,16 @@ Cure &Cure::operator=(Cure const &another)
 	this->_type = another.getType();
     std::cout << "Ice copy operator called.\n";
     return(*this);
+}
+
+AMateria *Cure::clone() const
+{
+	Cure *tmp = new Cure();
+	tmp->_type = this->_type;
+	return tmp;
+}
+
+void Cure::use(ICharacter& target)
+{
+	std::cout << "* heals "<< target.getName() <<"/’s wounds *" << std::endl;
 }

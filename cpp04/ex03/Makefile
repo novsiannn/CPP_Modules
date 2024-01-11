@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+         #
+#    By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/06 15:50:11 by novsiann          #+#    #+#              #
-#    Updated: 2024/01/06 18:39:02 by novsiann         ###   ########.fr        #
+#    Updated: 2024/01/11 20:59:13 by nikitos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= amateria
 
-SRCS		:= main.cpp AMateria.cpp Ice.cpp Cure.cpp
+SRCS		:= main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp
 
 OBJS		:= $(SRCS:.cpp=.o)
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 16:29:55 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/06 18:50:11 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/11 20:25:12 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,16 @@ Ice &Ice::operator=(Ice const &another)
 	this->_type = another.getType();
     std::cout << "Ice copy operator called.\n";
     return(*this);
+}
+
+AMateria *Ice::clone() const
+{
+	Ice *tmp = new Ice();
+	tmp->_type = this->_type;
+	return tmp;
+}
+
+void Ice::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << std::endl;
 }

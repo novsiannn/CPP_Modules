@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 16:25:29 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/06 18:58:54 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/11 20:26:28 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class Cure : public AMateria
 		Cure(std::string const &type);
 		~Cure();
 		Cure(Cure const &another);
+		AMateria *clone() const;
+		void use(ICharacter& target);
 		Cure &operator=(Cure const &another);
 };
 
