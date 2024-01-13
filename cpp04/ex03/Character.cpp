@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 20:49:36 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/11 21:32:13 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/13 12:28:24 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,48 @@ std::string const &Character::getName() const
 void	Character::setName(std::string name)
 {
 	this->_name = name;
+}
+
+void Character::equip(AMateria* m)
+{
+	int i = 0;
+
+	if (!m)
+    {
+        std::cout << "empty Materia. Check MateriaSource.\n";
+        return ;
+    }
+	while (i < 4)
+	{
+		if (!_inventory[i])
+		{
+			_inventory[i] = m;
+			break ;
+		}
+		i++;
+	}
+	std::cout << "Inventory is already full" << std::endl;
+}
+
+void Character::unequip(int idx)
+{
+	if (idx >= 4 || idx < 0)
+		std::cout << "This index in invalid.\n";
+	if (!_inventory[idx])
+		std::cout << "This index of inventory is already empty.\n";
+	else
+        _inventory[idx] = NULL;
+}
+
+void	Character::use(int idx, iCharacter &target)
+{
+	if (idx > 4 || idx < 0)
+    {
+        std::cout << "Invalid idx in use.\n";
+        return ;
+    }
+    if (_inventory[idx])
+        _inventory[idx]->use(target);
+    else
+        std::cout << "Not valid Materia!\n";
 }
