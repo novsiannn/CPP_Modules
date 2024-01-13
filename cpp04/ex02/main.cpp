@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/06 14:58:42 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/13 19:37:53 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 int main()
 {
-	Cat fenix;
+	// Cat fenix;
 
-	fenix.makeSound();
+	// fenix.makeSound();
 	// My tests with animals
 
 	// another tests

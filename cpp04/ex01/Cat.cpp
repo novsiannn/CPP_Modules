@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 12:37:20 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/06 13:47:55 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/13 18:49:18 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,9 @@ Cat::~Cat()
 
 Cat::Cat(const Cat &another)
 {
-	std::cout << "Dog copy constructor called." << std::endl;
 	*this = another;
+    *_brain = *another._brain;
+	std::cout << "Cat copy constructor called." << std::endl;
 }
 
 Cat &Cat::operator=(Cat const &another)
@@ -45,9 +46,10 @@ Cat &Cat::operator=(Cat const &another)
 	if (this == &another)
 		return *this;
 	this->_type = another.getType();
-	_brain = new Brain;
+	if (_brain == NULL)
+		_brain = new Brain;
     *_brain = *another._brain;
-    std::cout << "Dog copy operator called.\n";
+    std::cout << "Cat copy operator called.\n";
     return(*this);
 }
 
@@ -63,7 +65,6 @@ void	Cat::think( std::string thoughts ) const
 
 std::string	Cat::recall( int i ) const
 {
-	// std::cout << this->_brain->getIndex() << std::endl;
 	if ( i < this->_brain->getIndex() && i >= 0)
 	{
 		std::cout << "Cat: ";

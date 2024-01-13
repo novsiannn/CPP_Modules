@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:11:20 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/31 12:30:15 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/13 15:02:20 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Animal
 		virtual ~Animal();
 		Animal(const Animal &another);
 		Animal &operator=(Animal const &another);
-
 		std::string		getType( void ) const;
 		virtual void	makeSound() const;
 	protected:

@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/02 13:04:11 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/13 15:40:53 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,11 @@ int main()
 	// Wrong Animal and Cat tests.
 	// const WrongAnimal* i = new WrongCat();
 	// WrongCat j;
+	// WrongAnimal k;
 
-	// j.makeWrongSound(); //will output the wrongcat sound with wrongcat class because we are not using virtual keyword.
-	// i->makeWrongSound(); //will output the animal sound with wronganimal class!
+	// k.makeWrongSound();
+	// j.makeWrongSound(); //
+	// i->makeWrongSound(); //will output the animal sound from wronganimal class because we are not using virtual keywoard!
 
 	// delete i;
 	// return 0;

@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+         #
+#    By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/03 16:01:35 by novsiann          #+#    #+#              #
-#    Updated: 2024/01/04 11:53:20 by nikitos          ###   ########.fr        #
+#    Updated: 2024/01/13 16:29:01 by novsiann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= brain
+NAME		:= animals
 
 SRCS		:= main.cpp Dog.cpp Cat.cpp Animal.cpp WrongCat.cpp Brain.cpp WrongAnimal.cpp
 

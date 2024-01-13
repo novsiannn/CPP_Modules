@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 12:39:07 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/02 12:59:36 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/13 15:05:42 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ WrongCat &WrongCat::operator=(WrongCat const &another)
 
 void	WrongCat::makeWrongSound( void ) const
 {
-		std::cout << " WrongCat meow meow GIVE ME WHISKAS." << std::endl;
+		std::cout << "WrongCat meow meow GIVE ME WHISKAS." << std::endl;
 }

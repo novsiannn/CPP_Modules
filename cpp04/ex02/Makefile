@@ -6,11 +6,11 @@
 #    By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/03 16:01:35 by novsiann          #+#    #+#              #
-#    Updated: 2024/01/06 14:35:28 by novsiann         ###   ########.fr        #
+#    Updated: 2024/01/13 19:35:55 by novsiann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= brain
+NAME		:= aanimal
 
 SRCS		:= main.cpp Dog.cpp Cat.cpp AAnimal.cpp WrongCat.cpp Brain.cpp WrongAnimal.cpp
 

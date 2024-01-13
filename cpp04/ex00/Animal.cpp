@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:12:17 by novsiann          #+#    #+#             */
-/*   Updated: 2023/12/31 12:09:00 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/13 14:49:33 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Animal::Animal()
 
 Animal::Animal( std::string name )
 {
-	std::cout << "Animal default constructor called." << std::endl;
+	std::cout << "Animal constructor called." << std::endl;
 	_type = "Animal";
 }
 
