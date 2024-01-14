@@ -6,11 +6,12 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 20:49:36 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/13 12:28:24 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/14 15:36:54 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include "AMateria.hpp"
 
 Character::Character()
 {
@@ -90,10 +91,10 @@ void Character::equip(AMateria* m)
     }
 	while (i < 4)
 	{
-		if (!_inventory[i])
+		if (_inventory[i] == NULL)
 		{
 			_inventory[i] = m;
-			break ;
+			return ;
 		}
 		i++;
 	}
@@ -110,7 +111,7 @@ void Character::unequip(int idx)
         _inventory[idx] = NULL;
 }
 
-void	Character::use(int idx, iCharacter &target)
+void	Character::use(int idx, ICharacter &target)
 {
 	if (idx > 4 || idx < 0)
     {
@@ -121,4 +122,9 @@ void	Character::use(int idx, iCharacter &target)
         _inventory[idx]->use(target);
     else
         std::cout << "Not valid Materia!\n";
+}
+
+AMateria    *Character::getInventoryItem(int i)
+{
+	return ( this->_inventory[i] );
 }
