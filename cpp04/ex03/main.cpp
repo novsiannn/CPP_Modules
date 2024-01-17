@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:49:52 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/14 13:43:59 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/17 11:33:44 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,45 @@
 #include "Cure.hpp"
 #include "Ice.hpp"
 #include "Character.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
+
+// int main()
+// {
+//     std::cout <<"check\n";
+//     IMateriaSource* src = new MateriaSource();
+//     src->learnMateria(new Ice());
+//     src->learnMateria(new Cure());
+//     ICharacter* me = new Character("me");
+//     AMateria* tmp;
+//     tmp = src->createMateria("Ice");
+//     me->equip(tmp);
+//     tmp = src->createMateria("Cure");
+//     me->equip(tmp);
+//     ICharacter* bob = new Character("bob");
+//     me->use(0, *bob);
+//     me->use(1, *bob);
+//     delete bob;
+//     delete me;
+//     delete src;
+// }
 
 int main()
 {
-	// Cure test1;
-	// Ice test2;
-	// Character test3 ("suslik");
-	// Character test4 = test3;
-	// Character test5 = test4;
-	// AMateria *nikita = test2.clone();
-	// test3.setName("kawazaki");
-
-	// std::cout << test1.getType() << std::endl;
-	// std::cout << test2.getType() << std::endl;
-	// std::cout << test3.getName() << std::endl;
-	// std::cout << test5.getName() << std::endl;
-	// std::cout << nikita->getType() << std::endl;
-
-	// delete nikita;
-
-	Character man;
-	AMateria *chop;
-
-	std::cout << man.getName() << std::endl;
-	man.equip(chop);
-
-	return (0);
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+	delete bob;
+	delete me;
+	delete src;
+	return 0;
 }

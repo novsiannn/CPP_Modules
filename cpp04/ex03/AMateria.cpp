@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:51:57 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/14 13:35:22 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/17 11:32:13 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 AMateria::AMateria()
 {
-	std::cout << "AMateria default constructor called." << std::endl;
+	// std::cout << "AMateria default constructor called." << std::endl;
 	_type = "default_AMateria_type";
 }
 
 AMateria::AMateria( std::string const &type )
 {
-	std::cout << "AMateria constructor called." << std::endl;
+	// std::cout << "AMateria constructor called." << std::endl;
 	_type = "default_AMateria_type";
 }
 
 AMateria::~AMateria()
 {
-	std::cout << "AMateria destructor called." << std::endl;
+	// std::cout << "AMateria destructor called." << std::endl;
 }
 
 AMateria::AMateria(const AMateria &another)

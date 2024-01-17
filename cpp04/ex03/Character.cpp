@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 20:49:36 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/14 15:36:54 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/17 10:55:59 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ Character   &Character::operator=(Character &src)
 	this->_name = src.getName();
 	while (i < 4)
 	{
-		this->_inventory[i] = src._inventory[i]; // mb here clone func try to use
+		if (this->_inventory[i])
+            delete this->_inventory[i];
+		this->_inventory[i] = src._inventory[i];
 		i++;
 	}
 
