@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 14:07:01 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/17 11:28:33 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/20 18:20:33 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,14 @@ MateriaSource   &MateriaSource::operator=(MateriaSource &src)
 
 void MateriaSource::learnMateria(AMateria* src)
 {
+	if (!src)
+	{
+		std::cout << "Your AMateria is empty" << std::endl;
+		return ;
+	}
 	if(_index < 4)
 	{
-		this->_source[_index] = src->clone();
+		this->_source[_index] = src;
 		_index++;
 	}
 }

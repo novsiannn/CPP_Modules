@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 20:49:36 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/17 10:55:59 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/20 18:49:55 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Character   &Character::operator=(Character &src)
 	{
 		if (this->_inventory[i])
             delete this->_inventory[i];
-		this->_inventory[i] = src._inventory[i];
+		this->_inventory[i] = src._inventory[i]->clone();
 		i++;
 	}
 
@@ -93,6 +93,11 @@ void Character::equip(AMateria* m)
     }
 	while (i < 4)
 	{
+		if (_inventory[i] == m)
+		{
+			std::cout << "That materia is already in character u can not add it!" << std::endl;
+			return ;
+		}
 		if (_inventory[i] == NULL)
 		{
 			_inventory[i] = m;
@@ -106,16 +111,22 @@ void Character::equip(AMateria* m)
 void Character::unequip(int idx)
 {
 	if (idx >= 4 || idx < 0)
+	{
 		std::cout << "This index in invalid.\n";
+		return ;
+	}
 	if (!_inventory[idx])
 		std::cout << "This index of inventory is already empty.\n";
 	else
-        _inventory[idx] = NULL;
+	{
+		std::cout << "Unequip Materia with index - " << idx << std::endl;
+		_inventory[idx] = NULL;
+	}
 }
 
 void	Character::use(int idx, ICharacter &target)
 {
-	if (idx > 4 || idx < 0)
+	if (idx >= 4 || idx < 0)
     {
         std::cout << "Invalid idx in use.\n";
         return ;
