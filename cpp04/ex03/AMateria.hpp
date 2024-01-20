@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:46:48 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/14 13:35:45 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/19 10:36:59 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include "ICharacter.hpp"
 
-class iCharacter;
+class ICharacter;
 class AMateria
 {
 	protected:
