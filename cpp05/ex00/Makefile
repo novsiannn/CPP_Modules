@@ -6,11 +6,11 @@
 #    By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/03 16:01:35 by novsiann          #+#    #+#              #
-#    Updated: 2024/01/23 10:32:17 by nikitos          ###   ########.fr        #
+#    Updated: 2024/01/23 16:19:36 by nikitos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= bereucrat
+NAME		:= bureaucrat
 
 SRCS		:= main.cpp Bureaucrat.cpp
 

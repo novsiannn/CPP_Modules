@@ -6,7 +6,7 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/23 10:55:25 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/24 11:01:46 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int main()
 {
-	
+	Bureaucrat Volk("xui" , 0);
+	std::cout << Volk;
+	return 0;
 }
