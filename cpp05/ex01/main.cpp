@@ -6,7 +6,7 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/24 21:02:40 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/25 12:17:24 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,10 @@ int main()
 	// }
 	
 	{
-		Form test("o4ko", 50);
+		Bureaucrat felix("felix", 50);
+		Form test("o4ko", 50, 50);
+		std::cout << test;
+		test.beSigned(felix);
 		std::cout << test;
 	}
 

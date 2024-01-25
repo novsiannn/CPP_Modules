@@ -6,40 +6,35 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 19:34:30 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/24 21:04:40 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/25 12:25:54 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : _name("default_name")
+Form::Form() : _name("default_name"), _gradeSign(1) , _gradeExec(1) , _sign(false)
 {
 	std::cout << "Form default constructor called" << std::endl;
-	_sign = false;
-	_grade = 150;
 }
 
-Form::Form( std::string name, int grade) : _name(name)
+Form::Form( std::string name, int gSign, int gExec ) : _name(name), _gradeSign(gSign) , _gradeExec(gExec) , _sign(false)
 {
-	_sign = false;
 	std::cout << "Form constructor called" << std::endl;
 	try
 	{
-		if (grade < 1)
+		if (gSign < 1 || gExec < 1)
 			throw Form::GradeTooHighException();
-		else if (grade > 150)
+		else if (gSign > 150 || gExec > 150)
 			throw Form::GradeTooLowException();
 		else
 		{
-			_grade = grade;
-			std::cout << "Form is created with grade - " << getGrade() << std::endl;
+			std::cout << "Form creation with name: " << _name << " and grade sign: "<< _gradeSign;
+			std::cout << " and also with grade exec: " << _gradeExec << " is made !" << std::endl;
 		}
 	}
 	catch(const std::exception &er)
 	{
 		std::cout << "Creation exception thrown: " << er.what() << std::endl;
-		std::cout << "Grade set to 150 like a default value." << std::endl;
-		_grade = 150;
 	}
 }
 
@@ -48,7 +43,7 @@ Form::~Form()
 	std::cout << "Destructor is called" << std::endl;
 }
 
-Form::Form(Form const &src) : _name(src.getName())
+Form::Form(Form const &src) : _name(src.getName()), _gradeExec(src.getGradeExec()), _gradeSign(src.getGradeSign())
 {
 	std::cout << "Form copy constructor called" << std::endl;
 	*this = src;
@@ -58,7 +53,6 @@ Form &Form::operator=(Form const &src)
 {
 	if (this == &src)
 		return *this;
-	_grade = src.getGrade();
 	this->_sign = src.getSign();
 	std::cout << "Form copy assignment constructor called" << std::endl;
 	return *this;
@@ -78,7 +72,8 @@ std::ostream& operator<<(std::ostream &os, const Form &src)
 {
 	os << "--- You are requested information about Form ---" << std::endl;
 	os << "-> Name: "<< src.getName() << std::endl;
-	os << "-> Grade: " << src.getGrade() << std::endl;
+	os << "-> Grade sign: " << src.getGradeSign() << std::endl;
+	os << "-> Grade execution: " << src.getGradeSign() << std::endl;
 	os << "-> Sign: " << src.getSign() << std::endl;
 	os << "------------------------------------------------" << std::endl;
 	return ( os );
@@ -89,12 +84,23 @@ std::string	Form::getName() const
 	return ( this->_name );
 }
 
-int	Form::getGrade() const
+int	Form::getGradeSign() const
 {
-	return ( this->_grade );
+	return ( this->_gradeSign );
+}
+
+int			Form::getGradeExec() const
+{
+	return ( this->_gradeExec );
 }
 
 bool	Form::getSign() const
 {
 	return ( this->_sign );
+}
+
+void	Form::beSigned( Bureaucrat obj )
+{
+	// if ()
+	this->_sign = true;
 }
