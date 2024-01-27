@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/27 20:09:13 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/27 20:57:55 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,20 @@ int main()
 	// 	std::cout << test << std::endl;
 	// }
 
-	{ // Tests for pardon form
-		PresidentialPardonForm test("home");
-		Bureaucrat alex("alex" , 1);
-		alex.signForm(test);
-		std::cout << test << std::endl;
-		test.execute(alex);
+	// { // Tests for pardon form
+		// PresidentialPardonForm test("home");
+		// Bureaucrat alex("alex" , 1);
+		// alex.signForm(test);
+		// std::cout << test << std::endl;
+		// test.execute(alex);
+	// }
+	{ // Test for execute form
+		Bureaucrat fil ("fil", 10);
+		PresidentialPardonForm test;
+		// fil.signForm(test);
+		fil.executeForm(test);
 	}
+	
 	
 	return 0;
 }

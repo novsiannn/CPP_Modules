@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:32:29 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/27 13:44:07 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/27 20:53:44 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ class Bureaucrat{
 			public:
 				virtual const char *what() const throw();
 		};
+		class CantExecuteForm: public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 		Bureaucrat();
 		Bureaucrat( std::string name, int grade );
 		~Bureaucrat();
@@ -41,6 +46,7 @@ class Bureaucrat{
 		void		incrementGrade();
 		void		decrementGrade();
 		void		signForm( AForm &form );
+		void		executeForm(AForm const & form);
 	private:
 		const	std::string	_name;
 		int					_grade;
