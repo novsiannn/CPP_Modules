@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/27 20:57:55 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:39:48 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,14 @@ int main()
 		// test.execute(alex);
 	// }
 	{ // Test for execute form
-		Bureaucrat fil ("fil", 10);
-		PresidentialPardonForm test;
-		// fil.signForm(test);
-		fil.executeForm(test);
-	}
+		// Bureaucrat fil ("fil", 72);
+		// ShrubberyCreationForm test;
+		// PresidentialPardonForm test("home");
+	// 	RobotomyRequestForm test("blabla");
+	// 	test.beSigned(fil);
+	// 	std::cout << test;
+	// 	fil.executeForm(test);
+	// }
 	
 	
 	return 0;

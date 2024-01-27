@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:54:45 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/27 20:59:14 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:27:12 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,9 +118,9 @@ const char	*Bureaucrat::GradeTooHighException::what() const throw()
 	return "Grade is too high";
 }
 
-const char	*Bureaucrat::CantExecuteForm::what() const throw()
+const char	*Bureaucrat::UnsignedForm::what() const throw()
 {
-	return " can't execute form.";
+	return " an unsigned form.";
 }
 
 std::ostream& operator<<(std::ostream& os,  Bureaucrat const &src)
@@ -154,8 +154,8 @@ void		Bureaucrat::executeForm(AForm const & form)
 {
 	try
 	{
-		if ( !this->getSign() )
-            throw AForm::UnsignedForm();
+		if ( !form.getSign() )
+            throw Bureaucrat::UnsignedForm();
 		else
 		{
 			form.execute(*this);
@@ -164,7 +164,7 @@ void		Bureaucrat::executeForm(AForm const & form)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << "Exception caught: " << e.what() << '\n';
 	}
 	
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:32:29 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/27 20:53:44 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/27 21:26:21 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Bureaucrat{
 			public:
 				virtual const char *what() const throw();
 		};
-		class CantExecuteForm: public std::exception
+		class UnsignedForm: public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
