@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 12:59:56 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/27 16:59:46 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/27 17:20:53 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubbyCreateForm", 145,137)
 {
+    std::cout << "ShrubberyCreationForm default constructor is called" << std::endl;
 	_target = "default_target";
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( std::string target) : AForm("ShrubbyCreateForm", 145,137)
 {
+    std::cout << "ShrubberyCreationForm constructor is called" << std::endl;
 	_target = target;
 }
 
