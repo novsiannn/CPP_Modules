@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/27 21:48:08 by nikitos          ###   ########.fr       */
+/*   Created: 2024/01/27 21:48:23 by nikitos           #+#    #+#             */
+/*   Updated: 2024/01/27 21:55:17 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "AForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#ifndef INTERN_H
+# define INTERN_H
 
-int main()
+#include <string>
+#include <iostream>
+#include <exception>
+#include "AForm.hpp"
+
+class AForm;
+class Intern
 {
-	{
-	
-	}
-	
-	return 0;
-}
+	public:
+		Intern();
+		~Intern();
+		Intern( Intern const &src );
+		Intern	&operator=( Intern const &src );
+		std::string	getTarget() const;
+		AForm *makeForm( std::string name, std::string target );
+	private:
+		std::string	_target;
+		std::string	_name;
+};
+#endif
