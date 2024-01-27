@@ -6,7 +6,7 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/27 21:39:48 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/27 21:40:57 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 
 int main()
 {
-	// { // Test with a ShrubberyCreationForm
-	// 	Bureaucrat jorg( "ea", 1 );
-	// 	ShrubberyCreationForm main( "main" );
-	// 	jorg.signForm(main);
-	// 	main.execute(jorg);
-	// 	std::cout << main;
-	// 	return 0;
-	// }
+	{ // Test with a ShrubberyCreationForm
+		Bureaucrat jorg( "ea", 1 );
+		ShrubberyCreationForm main( "main" );
+		jorg.signForm(main);
+		main.execute(jorg);
+		std::cout << main;
+		return 0;
+	}
 	// { // Test with a RobotomyRequestForm
 	// 	RobotomyRequestForm test("blabla");
 	// 	Bureaucrat	filip("filip", 72);
@@ -41,7 +41,7 @@ int main()
 		// std::cout << test << std::endl;
 		// test.execute(alex);
 	// }
-	{ // Test for execute form
+	// { // Test for execute form
 		// Bureaucrat fil ("fil", 72);
 		// ShrubberyCreationForm test;
 		// PresidentialPardonForm test("home");
