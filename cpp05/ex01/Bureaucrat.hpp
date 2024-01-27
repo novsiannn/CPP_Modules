@@ -6,7 +6,7 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:32:29 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/25 20:41:40 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/27 11:03:54 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,17 @@ class Bureaucrat{
 		Bureaucrat();
 		Bureaucrat( std::string name, int grade );
 		~Bureaucrat();
-		Bureaucrat(Bureaucrat const &src);
-		Bureaucrat	&operator=(Bureaucrat const &src);
+		Bureaucrat( Bureaucrat const &src );
+		Bureaucrat	&operator=( Bureaucrat const &src );
 		std::string	getName() const;
 		int			getGrade() const;
 		void		incrementGrade();
 		void		decrementGrade();
-		void		signForm(Form &form);
+		void		signForm( Form &form );
 	private:
 		const	std::string	_name;
 		int					_grade;
 };
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat &src);
+std::ostream& operator<<( std::ostream& os, const Bureaucrat &src );
 #endif

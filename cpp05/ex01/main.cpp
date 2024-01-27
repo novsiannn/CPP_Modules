@@ -6,7 +6,7 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/25 22:25:25 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/27 11:37:30 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,18 +102,18 @@ int main()
 	// ----------------------------------- TEST FOR EX02 ----------------------------------------
 
 	// {	// Tests for form sign
-	// 	Bureaucrat felix("Felix", 52);
-	// 	Form bewerbung("Bewerbung", 50, 50);
-	// 	bewerbung.beSigned(felix);
-	// 	std::cout << felix;
-	// 	std::cout << bewerbung;
-	// 	bewerbung.beSigned(felix);
-	// 	felix.incrementGrade();
-	// 	felix.incrementGrade();
-	// 	felix.incrementGrade();
-	// 	bewerbung.beSigned(felix);
-	// 	bewerbung.beSigned(felix);
-	// 	std::cout << bewerbung;
+		Bureaucrat felix("Felix", 52);
+		Form bewerbung("Bewerbung", 50, 50);
+		bewerbung.beSigned(felix);
+		std::cout << felix;
+		std::cout << bewerbung;
+		bewerbung.beSigned(felix);
+		felix.incrementGrade();
+		felix.incrementGrade();
+		felix.incrementGrade();
+		bewerbung.beSigned(felix);
+		bewerbung.beSigned(felix);
+		std::cout << bewerbung;
 	// }
 
 	// { // Test for invalid value
@@ -121,7 +121,6 @@ int main()
 	// 	Form bewerbung("Bewerbung", 151, 150);
 	// 	Form correct_bewerbung("cor_bewerb", 100, 100);
 	// 	bewerbung.beSigned(felix);
-	// 	std::cout << bewerbung;
 	// 	felix.signForm(bewerbung);
 	// 	felix.signForm(correct_bewerbung);
 	// 	std::cout << correct_bewerbung;
@@ -129,16 +128,46 @@ int main()
 	// 	std::cout << felix;
 	// }
 	
-	{ // Test for deep copy 
+	{ // Tests for beSigned and singForm
+		// Bureaucrat	Leonard("Leonard", 1);
+		// Bureaucrat	Francesco("Francesco", 10);
+		// Bureaucrat	Vladimir("Vladimir", 50);
+	
+		// Form		wba("wba", 100, 100);
+		// Form		bg("bg", 40, 40);
+		// Form		zsy("zsy", 10,10);
+		// Form		wob("wob" , 200, 300);
 		
-		Form Lebenslauf_God("God", 136, 136);
-		Bureaucrat agent("007", 1);
+		// First test
 		
-		Form Lebenslauf_New(Lebenslauf_God);
-		Lebenslauf_God.beSigned(agent);
-		std::cout << Lebenslauf_God;
-		std::cout << Lebenslauf_New;
+		// wba.beSigned(Leonard); // beSigned don't prints a message but it signs!!
+		// Vladimir.signForm(bg);
+		// Francesco.signForm(bg);
+		// Vladimir.signForm(bg);
+		
+		// std::cout << wba;
+		// std::cout << bg;
+		
+		// Second test
+		
+		// wob.beSigned(Vladimir);
+		// zsy.beSigned(Francesco);
+		// Leonard.signForm(zsy);
+	
+		// std::cout << zsy;
+		// std::cout << wob;
 	}
+	
+	// { // Test for deep copy 
+		
+	// 	Form Lebenslauf_God("God", 136, 136);
+	// 	Bureaucrat agent("007", 1);
+		
+	// 	Form Lebenslauf_New(Lebenslauf_God);
+	// 	Lebenslauf_God.beSigned(agent);
+	// 	std::cout << Lebenslauf_God;
+	// 	std::cout << Lebenslauf_New;
+	// }
 
 	return 0;
 }

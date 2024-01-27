@@ -6,7 +6,7 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 19:27:35 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/25 21:59:23 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/27 11:01:25 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ class Form {
 		~Form();
 		Form( Form const &src );
 		Form &operator=( Form const &src );
+		void		beSigned( Bureaucrat &obj );
 		int			getGradeSign() const;
 		int			getGradeExec() const;
 		std::string	getName() const;
 		bool		getSign() const;
-		void		beSigned( Bureaucrat &obj );
 		int			getCorrectCreation() const;
 		class GradeTooHighException : public std::exception
 		{
