@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/28 12:19:43 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/28 22:03:32 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,50 @@
 int main()
 {
 	// { // Test with a ShrubberyCreationForm
-	// 	Bureaucrat jorg( "ea", 1 );
-	// 	ShrubberyCreationForm main( "main" );
-	// 	jorg.signForm(main);
-	// 	main.execute(jorg);
-	// 	std::cout << main;
-	// 	return 0;
+	// 	try
+	// 	{
+	// 		Bureaucrat jorg( "ea", 150 );
+	// 		ShrubberyCreationForm main( "main" );
+	// 		jorg.signForm(main);
+	// 		main.execute(jorg);
+	// 		std::cout << main;
+	// 		return 0;
+	// 	}
+	// 	catch(const std::exception& e)
+	// 	{
+	// 		std::cerr << e.what() << '\n';
+	// 	}
 	// }
 	
 	// { // Test with a RobotomyRequestForm
-	// 	RobotomyRequestForm test("blabla");
-	// 	Bureaucrat	filip("filip", 72);
-	// 	filip.signForm(test);
-	// 	test.execute(filip);
-	// 	std::cout << test << std::endl;
+	// 	try
+	// 	{
+	// 		RobotomyRequestForm test("blabla");
+	// 		Bureaucrat	filip("filip", 10);
+	// 		filip.signForm(test);
+	// 		test.execute(filip);
+	// 		std::cout << test << std::endl;
+	// 	}
+	// 	catch(const std::exception& e)
+	// 	{
+	// 		std::cerr << e.what() << '\n';
+	// 	}
 	// }
 
-	// { // Tests for pardon form
-		// PresidentialPardonForm test("home");
-		// Bureaucrat alex("alex" , 1);
-		// alex.signForm(test);
-		// std::cout << test << std::endl;
-		// test.execute(alex);
-	// }
+	{ // Tests for pardon form
+		try
+		{
+			PresidentialPardonForm test("home");
+			Bureaucrat alex("alex" , 1);
+			alex.signForm(test);
+			std::cout << test << std::endl;
+			test.execute(alex);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
 	
 	return 0;
 }

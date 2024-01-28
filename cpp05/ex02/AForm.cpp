@@ -3,39 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 19:34:30 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/27 16:50:28 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/28 22:01:19 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm() : _name("default_name"), _gradeSign(1) , _gradeExec(1) , _sign(false), _correctCreation(0)
+AForm::AForm() : _name("default_name"), _sign(false), _gradeSign(1) , _gradeExec(1) ,  _correctCreation(0)
 {
 	std::cout << "AForm default constructor called" << std::endl;
 }
 
-AForm::AForm( std::string name, int gSign, int gExec ) : _name(name), _gradeSign(gSign) , _gradeExec(gExec) , _sign(false), _correctCreation(0)
+AForm::AForm( std::string name, int gSign, int gExec ) : _name(name), _sign(false), _gradeSign(gSign) , _gradeExec(gExec) , _correctCreation(0)
 {
 	std::cout << "AForm constructor called" << std::endl;
-	try
+	if (gSign < 1 || gExec < 1)
+		throw AForm::GradeTooHighException();
+	else if (gSign > 150 || gExec > 150)
+		throw AForm::GradeTooLowException();
+	else
 	{
-		if (gSign < 1 || gExec < 1)
-			throw AForm::GradeTooHighException();
-		else if (gSign > 150 || gExec > 150)
-			throw AForm::GradeTooLowException();
-		else
-		{
-			std::cout << "AForm creation with name: " << _name << " and grade sign: "<< _gradeSign;
-			std::cout << " and also with grade exec: " << _gradeExec << " is made !" << std::endl;
-		}
-	}
-	catch(const std::exception &er)
-	{
-		std::cout << "Creation exception thrown: " << er.what() << std::endl;
-		_correctCreation = 1;
+		std::cout << "AForm creation with name: " << _name << " and grade sign: "<< _gradeSign;
+		std::cout << " and also with grade exec: " << _gradeExec << " is made !" << std::endl;
 	}
 }
 
@@ -44,7 +36,7 @@ AForm::~AForm()
 	std::cout << "AForm destructor is called" << std::endl;
 }
 
-AForm::AForm(AForm const &src) : _name(src.getName()), _gradeExec(src.getGradeExec()), _gradeSign(src.getGradeSign()), _correctCreation(src.getCorrectCreation())
+AForm::AForm(AForm const &src) : _name(src.getName()) , _gradeSign(src.getGradeSign()) , _gradeExec(src.getGradeExec()),  _correctCreation(src.getCorrectCreation())
 {
 	std::cout << "AForm copy constructor called" << std::endl;
 	*this = src;
@@ -117,21 +109,14 @@ int	AForm::getCorrectCreation() const
 
 void	AForm::beSigned( Bureaucrat &obj )
 {
-	try
-	{
-		if (this->_sign == 1)
-			throw AForm::AlreadySigned();
-		else if (this->getCorrectCreation())
-			throw AForm::incorrectCreation();
-		else if (obj.getGrade() > this->getGradeSign())
-			throw AForm::GradeTooLowException();
-		else
-			this->_sign = true;
-	}
-	catch( const std::exception& e )
-	{
-		std::cout << "Can not be sign because: " << e.what() << std::endl;
-	}
+	if (this->_sign == 1)
+		throw AForm::AlreadySigned();
+	else if (this->getCorrectCreation())
+		throw AForm::incorrectCreation();
+	else if (obj.getGrade() > this->getGradeSign())
+		throw AForm::GradeTooLowException();
+	else
+		this->_sign = true;
 }
 
 void				AForm::setSignBool(bool sign)
