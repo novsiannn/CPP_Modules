@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:54:45 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/24 12:10:38 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/27 20:49:40 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,3 +123,4 @@ std::ostream& operator<<(std::ostream& os,  Bureaucrat const &src)
 	os << src.getName() << ", bureaucrat grade " << src.getGrade() << "." << std::endl;
 	return os;
 }
+
