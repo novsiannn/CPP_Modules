@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 21:48:23 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/28 11:11:18 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/28 13:16:55 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,10 @@ class Intern
 		~Intern();
 		Intern( Intern const &src );
 		Intern	&operator=( Intern const &src );
-		std::string	getTarget() const;
 		AForm	*makeForm( std::string name, std::string target );
+	private:
 		AForm       *makeShrubberyForm( std::string target );
         AForm       *makeRobotomyForm( std::string target );
-        AForm       *makePardonForm( std::string target );
-	private:
-		std::string	_target;
-		std::string	_name;
+        AForm       *makePardonForm( std::string target );	
 };
 #endif

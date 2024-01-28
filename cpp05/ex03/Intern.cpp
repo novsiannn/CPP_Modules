@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 21:48:11 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/28 11:22:13 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/28 13:17:55 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 Intern::Intern()
 {
 	std::cout << "Intern default constructor is called" << std::endl;
-	_target = "default_target";
 }
 
 Intern::~Intern()
@@ -38,7 +37,6 @@ Intern &Intern::operator=(Intern const &src)
 	std::cout << "Intern copy assignment operator called" << std::endl;
 	if (this == &src)
 		return *this;
-    _target = src.getTarget();
 	return *this;
 }
 
@@ -73,9 +71,4 @@ AForm       *Intern::makeRobotomyForm( std::string target )
 AForm       *Intern::makePardonForm( std::string target )
 {
 	return ( new PresidentialPardonForm( target ));
-}
-
-std::string	Intern::getTarget() const
-{
-	return ( _target );
 }
