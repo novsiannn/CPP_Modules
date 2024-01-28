@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 19:25:03 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/27 19:37:38 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/28 21:58:19 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,20 +52,14 @@ std::string	PresidentialPardonForm::getTarget() const
 
 void	PresidentialPardonForm::execute( Bureaucrat const & executor ) const
 {
-	try
+	if ( !this->getSign() )
+	    throw PresidentialPardonForm::UnsignedForm();
+	else if (executor.getGrade() > this->getGradeExec())
+		throw PresidentialPardonForm::GradeTooLowException();
+	else
 	{
-		if ( !this->getSign() )
-            throw PresidentialPardonForm::UnsignedForm();
-		else
-		{
-			std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
-		}
+		std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
 }
 
 const char *PresidentialPardonForm::UnsignedForm::what() const throw()

@@ -6,7 +6,7 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 12:59:56 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/27 21:34:24 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/28 21:56:36 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,18 +48,11 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 
 void	ShrubberyCreationForm::execute( Bureaucrat const & executor ) const
 {
-    try
-    {
-        if ( !this->getSign() )
-            throw ShrubberyCreationForm::UnsignedForm();
-    }
-    catch ( const std::exception& e )
-    {
-        std::cout << "Can not execute that function because: " << e.what() << std::endl;
-        return ;
-    }
+    if ( !this->getSign() )
+        throw ShrubberyCreationForm::UnsignedForm();
+    else if (executor.getGrade() > this->getGradeExec())
+       throw ShrubberyCreationForm::GradeTooLowException();
 	std::ofstream file(getTarget() + "_shrubbery");
-
 	file  << "                                                  ." << std::endl;
     file << "                                              .         ;" << std::endl;
     file << "                 .              .              ;%     ;;" << std::endl;

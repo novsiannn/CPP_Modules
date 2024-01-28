@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 17:07:25 by novsiann          #+#    #+#             */
-/*   Updated: 2024/01/27 19:26:37 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/01/28 21:57:28 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,26 +52,20 @@ std::string	RobotomyRequestForm::getTarget() const
 
 void	RobotomyRequestForm::execute( Bureaucrat const & executor ) const
 {
-	try
+	if ( !this->getSign() )
+       throw RobotomyRequestForm::UnsignedForm();
+	else if (executor.getGrade() > this->getGradeExec())
+    	throw RobotomyRequestForm::GradeTooLowException();
+	else
 	{
-		if ( !this->getSign() )
-            throw RobotomyRequestForm::UnsignedForm();
+		std::cout << "Some drilling noises..." << std::endl;
+		int x = time(0);
+		srand(x);
+		if (rand() % 2 == 0)
+			std::cout << this->getTarget() << " has been robotomized successfully 50% of the time" << std::endl;
 		else
-		{
-			std::cout << "Some drilling noises..." << std::endl;
-			int x = time(0);
-			srand(x);
-			if (rand() % 2 == 0)
-				std::cout << this->getTarget() << " has been robotomized successfully 50% of the time" << std::endl;
-			else
-				std::cout << this->getTarget() << " robotomy failed. Try one more time! :D" << std::endl;
-		}
+			std::cout << this->getTarget() << " robotomy failed. Try one more time! :D" << std::endl;
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
 }
 
 const char *RobotomyRequestForm::UnsignedForm::what() const throw()
