@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+         #
+#    By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/03 16:01:35 by novsiann          #+#    #+#              #
-#    Updated: 2024/01/27 19:40:52 by novsiann         ###   ########.fr        #
+#    Updated: 2024/01/28 11:14:56 by nikitos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= form
 
-SRCS		:= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRCS		:= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
 OBJS		:= $(SRCS:.cpp=.o)
 

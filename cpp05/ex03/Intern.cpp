@@ -6,11 +6,15 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 21:48:11 by nikitos           #+#    #+#             */
-/*   Updated: 2024/01/27 22:00:23 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/01/28 11:22:13 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
+
+# include "ShrubberyCreationForm.hpp"
+# include "RobotomyRequestForm.hpp"
+# include "PresidentialPardonForm.hpp"
 
 Intern::Intern()
 {
@@ -38,17 +42,40 @@ Intern &Intern::operator=(Intern const &src)
 	return *this;
 }
 
-AForm *makeForm( std::string name, std::string target )
+AForm *Intern::makeForm( std::string name, std::string target )
 {
 	std::string arr[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+	AForm *(Intern::*func_p[3])(std::string) = {&Intern::makeShrubberyForm, &Intern::makeRobotomyForm, &Intern::makePardonForm};
 	int i = 0;
 	
-	while(arr[i])
+	while(i < 3)
 	{
 		if (arr[i] == name)
 		{
-		
+			std::cout << "Intern creates new form " << name << std::endl;
+			return ((this->*func_p[i])(target));
 		}
 		i++;
 	}
+	std::cout << "Form name is incorrect" << std::endl;
+	return ( NULL );
+}
+
+AForm       *Intern::makeShrubberyForm( std::string target )
+{
+	return ( new ShrubberyCreationForm( target ));
+}
+
+AForm       *Intern::makeRobotomyForm( std::string target )
+{
+	return ( new RobotomyRequestForm( target ));
+}
+AForm       *Intern::makePardonForm( std::string target )
+{
+	return ( new PresidentialPardonForm( target ));
+}
+
+std::string	Intern::getTarget() const
+{
+	return ( _target );
 }
