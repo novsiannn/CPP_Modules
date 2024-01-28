@@ -6,7 +6,7 @@
 #    By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/03 16:01:35 by novsiann          #+#    #+#              #
-#    Updated: 2024/01/23 16:19:36 by nikitos          ###   ########.fr        #
+#    Updated: 2024/01/28 21:28:20 by nikitos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ $(NAME): $(OBJS)
                                                         
 
 %.o: %.cpp
-	$(CC) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: clean all re fclean
 
