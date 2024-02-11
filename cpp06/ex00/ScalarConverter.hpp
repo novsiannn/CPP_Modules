@@ -15,6 +15,9 @@
 
 #include <string>
 #include <iostream>
+#include <limits>
+#include <iomanip>
+#include <cstdlib>
 
 # define FALSE 1;
 # define INT 2;
@@ -22,7 +25,9 @@
 # define FLOAT 4;
 # define DOUBLE 5;
 # define PSEUDO 6;
- 
+
+
+
 class ScalarConverter{
 	private:
 		ScalarConverter();

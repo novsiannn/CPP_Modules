@@ -11,8 +11,7 @@
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-#include <iomanip>
-#include <cstring>
+
 
 ScalarConverter::ScalarConverter()
 {
@@ -67,19 +66,25 @@ int	getType(std::string str)
 	return INT;
 }
 
-void	print_out(int n, char c, double d, float f, bool valid)
+void	print_out(int n, char c, double d, float f, bool valid, int bigger_limit)
 {
-	if (c > 32 && c < 127)
+	if (n > 32 && n < 127)
 	{
 		std::cout << "char: " << c << std::endl;
-		std::cout << "int: " << n << std::endl;
+		if (bigger_limit)
+			std::cout << "int: No displayable" << std::endl;
+		else
+			std::cout << "int: " << n << std::endl;
 		std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" <<  std::endl;
 		std::cout << "double: " << d << std::endl;
 	}
 	else if (valid)
 	{
 		std::cout << "char: Non displayable"  << std::endl;
-		std::cout << "int: " << n << std::endl;
+		if (bigger_limit)
+			std::cout << "int: Non displayable" << std::endl;
+		else
+			std::cout << "int: " << n << std::endl;
 		std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" <<  std::endl;
 		std::cout << "double: " << d << std::endl;
 	}
@@ -97,7 +102,7 @@ void	char_handle( char c )
 	float cnv_float = static_cast<float>(c);
 	double cnv_double = static_cast<double>(c);
 	int cnv_int = static_cast<int>(c);
-	print_out(cnv_int, c, cnv_double, cnv_float, 1); 
+	print_out(cnv_int, c, cnv_double, cnv_float, 1, 0); 
 }
 
 void	int_handle(int num)
@@ -105,7 +110,7 @@ void	int_handle(int num)
 	char cnv_char = static_cast<char>(num);
 	float cnv_float = static_cast<float>(num);
 	double cnv_double = static_cast<double>(num);
-	print_out(num, cnv_char, cnv_double, cnv_float, 1); 
+	print_out(num, cnv_char, cnv_double, cnv_float, 1, 0); 
 }
 
 void pseudo_handle( std::string str )
@@ -114,21 +119,23 @@ void pseudo_handle( std::string str )
 	double cnv_double = static_cast<double>(cnv_float);
 	char cnv_char = static_cast<char>(cnv_float);
 	int cnv_int = static_cast<int> (cnv_float);
-	print_out(cnv_int, cnv_char, cnv_double, cnv_float, 0); 
+	print_out(cnv_int, cnv_char, cnv_double, cnv_float, 0, 0); 
 }
 
 void float_handle( float cnv_float )
 {
 	double cnv_double = static_cast<double>(cnv_float);
 	char cnv_char = static_cast<char>(cnv_float);
-	int cnv_int;
-	if (cnv_float > INT_MAX)
-		cnv_int = INT_MAX;
-	else if (cnv_float < INT_MIN)
-		cnv_int = INT_MIN;
+	cnv_float = static_cast<float>(cnv_float);
+	int bigger_limit = 0;
+	int cnv_int = 0;
+	if (cnv_float > std::numeric_limits<int>::max())
+		bigger_limit = 1;
+	else if (cnv_float < std::numeric_limits<int>::min())
+		bigger_limit = 1;
 	else
 		cnv_int = static_cast<int> (cnv_float);
-	print_out(cnv_int, cnv_char, cnv_double, cnv_float, 1); 
+	print_out(cnv_int, cnv_char, cnv_double, cnv_float, 1, bigger_limit); 
 }
 
 void double_handle( double cnv_double )
@@ -136,13 +143,18 @@ void double_handle( double cnv_double )
 	float cnv_float = static_cast<float>(cnv_double);
 	char cnv_char = static_cast<char>(cnv_double);
 	int cnv_int = static_cast<int> (cnv_double);
-	print_out(cnv_int, cnv_char, cnv_double, cnv_float, 1); 
+	print_out(cnv_int, cnv_char, cnv_double, cnv_float, 1, 0); 
 }
 
 void ScalarConverter::convert( std::string to_convert )
 {
+	if (to_convert.empty())
+	{
+		std::cout << "Error! Incorrect input !" << std::endl;
+		return ;
+	}
 	int type = getType( to_convert );
-	long tmp = atol(to_convert.c_str());
+	long int tmp = atol(to_convert.c_str());
 	if (type != 1 && (tmp > std::numeric_limits<int>::max() ||  tmp < std::numeric_limits<int>::min()))
 		type = FLOAT;
 	switch (type)
@@ -151,16 +163,16 @@ void ScalarConverter::convert( std::string to_convert )
 			std::cout << "Error! Incorrect input !" << std::endl;
 			break;
 		case 2:
-			int_handle(atoi(to_convert.c_str()));
+			int_handle(std::atoi(to_convert.c_str()));
 			break;
 		case 3:
 			char_handle(to_convert.at(0));
 			break;
 		case 4:
-			float_handle(atof(to_convert.c_str()));
+			float_handle(std::atof(to_convert.c_str()));
 			break;
 		case 5:
-			double_handle(atof(to_convert.c_str()));
+			double_handle(std::atof(to_convert.c_str()));
 			break;
 		case 6:
 			pseudo_handle( to_convert );
