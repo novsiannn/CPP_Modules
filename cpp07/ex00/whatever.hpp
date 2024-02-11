@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/02/11 19:37:36 by novsiann         ###   ########.fr       */
+/*   Created: 2024/02/05 20:38:21 by nikitos           #+#    #+#             */
+/*   Updated: 2024/02/11 19:32:43 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "allClasses.hpp"
+#ifndef WHATEVER_H
+# define WHATEVER_H
 
-int main()
-{
-	// Base *new_base = generate();
-	Base *new_base = NULL;
-	Base &rffr = *new_base;
+#include <string>
+#include <iostream>
 
-	identify(new_base);
-	identify(rffr);
-
-	delete (new_base);
-	return (0);
-}
+#endif
