@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/02/11 12:01:00 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/02/11 19:06:14 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ int main()
 
 	std::cout << &case1 << std::endl;
 	std::cout << case2 << std::endl;
+
+	std::cout << case1.num << std::endl;
+	case1.num = 15;
+	std::cout << case1.num << std::endl;
 
 	return (0);
 }
