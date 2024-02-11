@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 16:07:43 by novsiann          #+#    #+#             */
-/*   Updated: 2024/02/11 09:33:54 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/02/11 11:34:13 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ class Serializer{
 		~Serializer();
 		Serializer( Serializer const &src );
 		Serializer	&operator=( Serializer const &src );
-	// public:
-	// 	static uintptr_t serialize( Data* ptr );
-	// 	static Data* deserialize( uintptr_t raw );
+	public:
+		static uintptr_t serialize( Data* ptr );
+		static Data* deserialize( uintptr_t raw );
 };
 
 #endif
