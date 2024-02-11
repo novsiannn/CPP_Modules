@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/02/10 20:47:17 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/02/11 09:35:24 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 
 int main( )
 {
-	Data new_data;
-	Data newold_data;
+	Data case1;
+	Data case2;
+
+	case1.num = 5;
+	// case2.num = 7;
+	
+	// std::cout << case1.num << std::endl;
+	// std::cout << case2.num << std::endl;
+
+	return (0);
 }

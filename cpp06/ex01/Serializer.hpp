@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 16:07:43 by novsiann          #+#    #+#             */
-/*   Updated: 2024/02/10 20:46:31 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/02/11 09:33:54 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ struct Data
 	int num;
 	std::string str;
 };
+
 
 class Serializer{
 	private:
