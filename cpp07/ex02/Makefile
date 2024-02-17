@@ -6,11 +6,11 @@
 #    By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/03 16:01:35 by novsiann          #+#    #+#              #
-#    Updated: 2024/02/11 22:10:09 by nikitos          ###   ########.fr        #
+#    Updated: 2024/02/17 10:26:04 by nikitos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= iter
+NAME		:= array
 
 SRCS		:= main.cpp
 
