@@ -17,6 +17,7 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <algorithm>
 #include <deque>
 
 template <typename T>
