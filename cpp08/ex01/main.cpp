@@ -15,12 +15,11 @@
 int main( void ) 
 {
 	Span asd(5);
-
-	
 	unsigned long int i = -1;
+
 	try
 	{
-		asd.fillContainer(4,0, 100);
+		asd.fillContainer(5,0, 100);
 		std::cout << asd.shortestSpan() << std::endl;
 	}
 	catch(const std::exception& e)

@@ -83,7 +83,7 @@ void			Span::fillContainer(unsigned int n, int min, int max)
 {
 	if (n > this->_maxSize)
 		throw TooManyElements();
-	std::srand(static_cast<unsigned int>(std::time(0)));
+	std::srand(static_cast<unsigned int>(time(0)));
 	for (unsigned int i = 0; i < n; i++)
-		this->_container.push_back(rand() % (max - min) + min);
+		this->_container.push_back(std::rand() % (max - min) + min);
 }
