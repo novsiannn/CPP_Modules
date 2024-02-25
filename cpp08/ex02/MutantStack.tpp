@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.tpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:07:02 by novsiann          #+#    #+#             */
-/*   Updated: 2024/02/24 19:34:33 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/02/25 10:28:13 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,42 @@ MutantStack<T> &MutantStack<T>::operator=(MutantStack const &src) {
 	return *this;
 }
 
-// template <typename T>
-// typename MutantStack<T>::iterator MutantStack<T>::begin(){
-// 	return this->c.;
-// }
+template <typename T>
+typename MutantStack<T>::iterator MutantStack<T>::begin(){
+	return this->c.begin();
+}
+
+template <typename T>
+typename MutantStack<T>::iterator MutantStack<T>::end(){
+	return this->c.end();
+}
+
+template <typename T>
+typename MutantStack<T>::const_iterator MutantStack<T>::begin() const{
+	return this->c.begin();
+}
+
+template <typename T>
+typename MutantStack<T>::const_iterator MutantStack<T>::end() const{
+	return this->c.end();
+}
+
+template <typename T>
+typename MutantStack<T>::reverse_iterator MutantStack<T>::rbegin(){
+	return this->c.rbegin();
+}
+
+template <typename T>
+typename MutantStack<T>::reverse_iterator MutantStack<T>::rend(){
+	return this->c.rend();
+}
+
+template <typename T>
+typename MutantStack<T>::const_reverse_iterator MutantStack<T>::rbegin() const{
+	return this->c.rbegin();
+}
+
+template <typename T>
+typename MutantStack<T>::const_reverse_iterator MutantStack<T>::rend() const{
+	return this->c.rend();
+}

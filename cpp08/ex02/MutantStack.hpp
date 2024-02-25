@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 20:38:21 by nikitos           #+#    #+#             */
-/*   Updated: 2024/02/24 19:05:47 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/02/25 10:16:35 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,16 @@ class MutantStack : public std::stack<T>
 		typedef typename std::stack<T>::container_type::const_reverse_iterator const_reverse_iterator;
 
 		iterator begin();
+		iterator end();
+	
+		const_iterator begin() const;
+		const_iterator end() const;
+
+		reverse_iterator rbegin();
+		reverse_iterator rend();
+
+		const_reverse_iterator rbegin() const;
+		const_reverse_iterator rend() const;
 };
 
 #include "MutantStack.tpp"
