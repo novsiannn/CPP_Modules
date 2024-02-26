@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 20:38:21 by nikitos           #+#    #+#             */
-/*   Updated: 2024/02/25 20:23:17 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/02/26 11:34:12 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,27 @@
 
 #include <string>
 #include <iostream>
-#include <vector>
-#include <list>
-#include <algorithm>
-#include <deque>
+#include <fstream>
+#include <map>
+#include <exception>
+#include <sstream>
+#include <iterator>
 
-
+class BitcoinExchange
+{
+	public:
+		BitcoinExchange();
+		~BitcoinExchange();
+		BitcoinExchange(BitcoinExchange const &src);
+		BitcoinExchange &operator=(BitcoinExchange const &src);
+		void	read_data();
+		class NonExistentFile : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+	private:
+		std::map<std::string, double> _data;
+};
 
 #endif
