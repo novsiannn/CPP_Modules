@@ -6,7 +6,7 @@
 /*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/03/15 16:09:51 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/03/15 16:14:37 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,11 @@ int main( int ac, char **av )
 					std::cerr << "Error: very large number" << std::endl;
 				else
 				{
+					if (value > 1000)
+					{
+						std::cout << "Error: value has be between 0 and 1000" << std::endl;
+						continue;
+					}
 					date = trim(date);
 					it = base.findInData(date);
 					price = base.getPrice(it->first);
