@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 20:21:44 by novsiann          #+#    #+#             */
-/*   Updated: 2024/03/15 09:53:43 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/03/15 16:09:40 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,9 @@ void	BitcoinExchange::read_data()
 	else
 		throw NonExistentFile();
 	file.close();
-	// for (std::map<std::string, double>::iterator it = _data.begin(); it != _data.end(); ++it)
-	// {
-    // 	std::cout << it->first << "=>" << it->second << std::endl;
-	// }
 }
 
 
-//That function is not finished because I must webserv start, I'll finish it in 1-2 month.
-// I need to handle date that is not in the database and find date closest to non-exist date.
 std::map<std::string, double>::iterator	BitcoinExchange::findInData( std::string date )
 {
 	std::map<std::string, double>::iterator it;
@@ -76,12 +70,9 @@ std::map<std::string, double>::iterator	BitcoinExchange::findInData( std::string
 
 	iss >> year >> dash >> month >> dash >> day;
 	it = _data.find(date);
-	
-	// std::cout << " HERE " << year << dash << month << dash << day << std::endl;
 
 	if(it != _data.end())
 		return it;
-
 	while(true)
 	{
 		if(day > 1)
@@ -93,10 +84,10 @@ std::map<std::string, double>::iterator	BitcoinExchange::findInData( std::string
 		}
 		else
 		{
+			day = 31;
 			month = 12;
 			year--;
 		}
-		
 		oss << year << dash;
 		if (month < 10)
 			oss << 0 << month << dash;
@@ -108,13 +99,21 @@ std::map<std::string, double>::iterator	BitcoinExchange::findInData( std::string
 			oss << day;
 
 		date = oss.str();
-		// std::cout<< "Date after change" << date << std::endl;
-		// it = _data.find(date);
-		std::cout << date << " " << std::endl;
+		oss.str("");
+
 		it = _data.find(date);
 		if (it != _data.end())
 			return it;
-		if (date == "2009-01-02")
+		if (year < 2009)
 			return _data.begin();
 	}
+	return _data.begin();
+}
+
+double BitcoinExchange::getPrice(std::string date)
+{
+	std::map<std::string, double>::iterator it;
+	it = _data.find(date);
+
+	return it->second;
 }

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/02/27 11:52:16 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/03/15 16:09:51 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
+#include <limits.h>
 
 std::string trim(const std::string& input) {
     size_t firstNonSpace = input.find_first_not_of(" ");
@@ -78,6 +79,7 @@ int main( int ac, char **av )
 	std::string			date;
 	std::map<std::string, double>::iterator it;
 	double				value;
+	double				price;
 
 	if (file.is_open())
 	{
@@ -100,7 +102,8 @@ int main( int ac, char **av )
 				{
 					date = trim(date);
 					it = base.findInData(date);
-					std::cout << it->first << std::endl;
+					price = base.getPrice(it->first);
+					std::cout << date <<" => " << value << " = " << price * value << std::endl;
 				}
 			}
 		}
