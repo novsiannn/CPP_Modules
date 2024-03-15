@@ -6,7 +6,7 @@
 /*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 20:21:44 by novsiann          #+#    #+#             */
-/*   Updated: 2024/02/28 09:30:52 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/03/15 09:53:43 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,26 +70,51 @@ std::map<std::string, double>::iterator	BitcoinExchange::findInData( std::string
 {
 	std::map<std::string, double>::iterator it;
 	std::istringstream iss(date);
+	std::ostringstream oss;
 	int year, month, day;
 	char dash;
 
-	iss >> year >> dash >> month >> day;
+	iss >> year >> dash >> month >> dash >> day;
 	it = _data.find(date);
+	
+	// std::cout << " HERE " << year << dash << month << dash << day << std::endl;
 
 	if(it != _data.end())
 		return it;
 
-	while(it == _data.end())
+	while(true)
 	{
-		if(day > 0)
+		if(day > 1)
 			day--;
-		else if (month > 0)
+		else if (month > 1)
 		{
 			day = 31;
 			month--;
 		}
 		else
+		{
+			month = 12;
 			year--;
+		}
+		
+		oss << year << dash;
+		if (month < 10)
+			oss << 0 << month << dash;
+		else
+			oss << month << dash;
+		if (day < 10)
+			oss << 0 << day;
+		else
+			oss << day;
+
+		date = oss.str();
+		// std::cout<< "Date after change" << date << std::endl;
+		// it = _data.find(date);
+		std::cout << date << " " << std::endl;
+		it = _data.find(date);
+		if (it != _data.end())
+			return it;
+		if (date == "2009-01-02")
+			return _data.begin();
 	}
-	return _data.begin();
 }
