@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/03/17 17:54:29 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/03/17 21:53:56 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,48 @@ int	checkEquation(std::string str)
 
 int	operation(int f, int s, std::string op)
 {
-	
+	int result = 0;
+	char sign = op[0];
+
+	if (sign == '/' && s == 0)
+	{
+		std::cerr << "Can't divide a zero!" << std::endl;
+		exit (1);
+	}
+	if (sign == '/' && f == 0)
+		return (0);
+	switch(sign){
+		case '+':
+			if ((s > 0 && f > INT_MAX - s) ||
+				(s < 0 && f < INT_MIN - s))
+			{
+				std::cerr << "INT Limit Reached!" << std::endl;
+				exit (1);
+			}
+			result = (s + f);
+			break ;
+		case '-':
+			if ((s > 0 && f < INT_MIN + s) ||
+				(s < 0 && f > INT_MAX + s))
+			{
+				std::cerr << "INT Limit Reached!" << std::endl;
+				exit (1);
+			}
+			result = (s - f);
+			break ;
+		case '*':
+			if ((f > INT_MAX / s) || (f < INT_MIN / s))
+			{
+				std::cerr << "INT Limit Reached!" << std::endl;
+				exit (1);
+			}
+			result = (s * f);
+			break ;
+		case '/':
+			result = (s / f);
+			break ;
+	}
+	return result;
 }
 
 void	rpn (std::string str)
@@ -59,19 +100,24 @@ void	rpn (std::string str)
 	int					first;
 	int					second;
 
-	while(iss >> tmp)
+	while(iss >> tmp || base.size() != 1)
 	{
 		if (tmp.find_first_not_of("0123456789") == std::string::npos)
-			std::cout << tmp << std::endl;
+			base.push(std::atoi(tmp.c_str()));
 		else
 		{
 			first = base.top();
 			base.pop();
 			second = base.top();
+			if (base.size() == 0){
+				std::cout << "Error" << std::endl;
+				exit (1);
+			}
 			base.pop();
 			base.push(operation(first, second, tmp));
 		}
 	}
+	std::cout << base.top() << std::endl;
 }
 
 int main( int ac, char **av ) 
