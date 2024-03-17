@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/03/17 11:31:32 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/03/17 17:54:29 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,34 @@ int	checkEquation(std::string str)
 	return 0;
 }
 
+int	operation(int f, int s, std::string op)
+{
+	
+}
+
+void	rpn (std::string str)
+{
+	std::istringstream	iss(str);
+	std::stack<int>		base;
+	std::string			tmp;
+	int					first;
+	int					second;
+
+	while(iss >> tmp)
+	{
+		if (tmp.find_first_not_of("0123456789") == std::string::npos)
+			std::cout << tmp << std::endl;
+		else
+		{
+			first = base.top();
+			base.pop();
+			second = base.top();
+			base.pop();
+			base.push(operation(first, second, tmp));
+		}
+	}
+}
+
 int main( int ac, char **av ) 
 {
 	if(ac != 2)
@@ -53,5 +81,7 @@ int main( int ac, char **av )
 	std::string equation = av[1];
 	if(checkEquation(equation))
 		std::cout << "Error:: incorrect input" << std::endl;
+	else
+		rpn(equation);
 	return 0;
 }
