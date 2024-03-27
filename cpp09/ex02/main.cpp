@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/03/25 22:07:56 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/03/27 16:56:54 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,33 +26,8 @@ void	check_input(char **av)
 	}
 }
 
-template <typename Container>
-void	PmergeMe<Container>::mainSort(char **av)
-{
-	int i = 1;
-
-	if (_data.empty())
-		_data.push_back(std::stoi(av[i++]));
-	while (av[i])
-	{
-		
-		i++;
-	}
-}
-
-template <typename Container>
-void	PmergeMe<Container>::printValue()
-{
-	for (typename Container::iterator it = _data.begin(); it != _data.end(); it++)
-	{
-		std::cout << *it << "| " << std::endl;
-	}
-	
-}
-
 int main( int ac, char **av ) 
 {
-	(void)ac;
 	if (ac < 2)
 	{
 		std::cout << "Error: no arguments" << std::endl;
@@ -66,12 +41,14 @@ int main( int ac, char **av )
 	{
 		std::cerr << e.what() << '\n';
 	}
-	PmergeMe<std::vector<int> > vec;
-	PmergeMe<std::deque<int> > deq;
-	// vec.mainSort(av);
-	deq.mainSort(av);
-	// vec.printValue();
+	
+	PmergeMe<std::vector<int> > vec(av + 1);
+	PmergeMe<std::deque<int> > deq(av + 1);
+	vec.mainSort();
 	deq.printValue();
+
+	// test();
+	// deq.printValue();
 	
 	return 0;
 }
