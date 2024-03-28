@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:31:58 by nikitos           #+#    #+#             */
-/*   Updated: 2024/03/27 16:56:51 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/03/28 22:57:15 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ template <typename Container>
 class PmergeMe {
 	private:
 		Container					_data;
+		double						_time;
 		int							_last;
 		typedef std::pair<int, int>	type_pair;
 	public:
@@ -36,26 +37,24 @@ class PmergeMe {
 		~PmergeMe();
 		PmergeMe(PmergeMe const &src );
 		PmergeMe &operator=(PmergeMe const &src );
+		int								binary_search(int target);
+		void							insertsort_pairs(std::vector<type_pair> &pair);
+		void							mainSort();
+		void							printValue();
+		double							getTime();
+		std::string						getOutputWithSize();
 		std::vector<int>				jacobsthal_sequence(size_t size);
 		typename std::vector<typename	PmergeMe<Container>::type_pair> mergesort_pairs();
-		void	mainSort();
-		void	printValue();
 };
 
 class DuplicateInt : public std::exception
 {
-	const char *what() const throw()
-	{
-		return ("Error: duplicate of numbers!");
-	}
+	const char *what() const throw();
 };
 
 class IncorrectInput : public std::exception
 {
-	const char *what() const throw()
-	{
-		return ("Error: incorrect input!");
-	}
+	const char *what() const throw();
 };
 
 #endif
