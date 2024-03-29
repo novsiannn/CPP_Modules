@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 19:20:40 by nikitos           #+#    #+#             */
-/*   Updated: 2024/03/17 11:32:23 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/03/29 12:59:10 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,7 @@
 #include <string>
 #include <sstream>
 #include <stack>
+#include <stdlib.h>
+#include <limits.h>
+
 #endif

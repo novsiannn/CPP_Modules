@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/03/17 21:53:56 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/03/29 13:03:31 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void ft_error(int i)
 {
 	if (i == 0)
 		std::cout << "Error: Incorrect number of arguments!" << std::endl;
+	exit(0);
 }
 
 int	checkEquation(std::string str)
@@ -103,7 +104,7 @@ void	rpn (std::string str)
 	while(iss >> tmp || base.size() != 1)
 	{
 		if (tmp.find_first_not_of("0123456789") == std::string::npos)
-			base.push(std::atoi(tmp.c_str()));
+			base.push(atoi(tmp.c_str()));
 		else
 		{
 			first = base.top();
