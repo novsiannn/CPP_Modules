@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:31:58 by nikitos           #+#    #+#             */
-/*   Updated: 2024/03/28 22:57:15 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/03/29 13:42:32 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include <deque>
 # include <ctime>
 # include <iomanip>
+# include <string>
 
 template <typename Container>
 class PmergeMe {

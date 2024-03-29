@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 19:42:22 by nikitos           #+#    #+#             */
-/*   Updated: 2024/03/28 23:08:52 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/03/29 13:44:57 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,9 @@ template <typename Container>
 std::string PmergeMe<Container>::getOutputWithSize()
 {
     int size = _data.size();
-    return "Time to process a range of " + std::to_string(size) + " elements with ";
+    std::stringstream ss;
+    ss << size;
+    return "Time to process a range of " + ss.str() + " elements with ";
 }
 
 template <typename Container>
