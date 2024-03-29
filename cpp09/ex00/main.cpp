@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/03/29 11:38:01 by nikitos          ###   ########.fr       */
+/*   Updated: 2024/03/29 12:45:52 by novsiann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,17 @@ bool correctDate(std::string date)
 	return true;
 }
 
+int emptyLine(std::string line)
+{
+	int i = 0;
+
+	while(isspace(line[i]))
+		i++;
+	if (line[i] == '\0' || line[i] == '\n')
+		return 1;
+	return 0;
+}
+
 int main( int ac, char **av ) 
 {	
 	BitcoinExchange base;
@@ -85,19 +96,24 @@ int main( int ac, char **av )
 	{
 		while(getline(file, line))
 		{
+			if(emptyLine(line))
+			{
+				std::cout << "empty line" << std::endl;
+				continue;
+			}
 			std::istringstream	iss(line);
 			if (getline(iss, date, '|'))
 			{
 				if(trim(date) == "date")
 					continue ;
 				else if (!correctDate(date))
-					std::cerr << "Error: incorrect date => " << date << std::endl;
+					std::cerr << "Error: bad input => " << date << std::endl;
 				else if (!(iss >> value)) // if value is empty
-					std::cerr << "Error: bad input" << std::endl;
+					std::cerr << "Error: bad input =>" << std::endl;
 				else if (value < 0)
-					std::cerr << "Error: not a positive number" << std::endl;
+					std::cerr << "Error: not a positive number." << std::endl;
 				else if (value > INT_MAX)
-					std::cerr << "Error: very large number" << std::endl;
+					std::cerr << "Error: too large a number." << std::endl;
 				else
 				{
 					if (value > 1000)
