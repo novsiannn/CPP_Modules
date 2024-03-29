@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 20:21:44 by novsiann          #+#    #+#             */
-/*   Updated: 2024/03/15 16:09:40 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/03/29 11:24:13 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ const char *BitcoinExchange::NonExistentFile::what() const throw()
 
 void	BitcoinExchange::read_data()
 {
-	std::ifstream file("data.csv");
 	std::string	line;
 	std::string	elem;
 	double		value;
+	std::ifstream file("data.csv");
 
 	if (file.is_open())
 	{

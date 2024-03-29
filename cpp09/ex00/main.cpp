@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novsiann <novsiann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitos <nikitos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:10:37 by novsiann          #+#    #+#             */
-/*   Updated: 2024/03/15 16:14:37 by novsiann         ###   ########.fr       */
+/*   Updated: 2024/03/29 11:38:01 by nikitos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ int main( int ac, char **av )
 					std::cerr << "Error: incorrect date => " << date << std::endl;
 				else if (!(iss >> value)) // if value is empty
 					std::cerr << "Error: bad input" << std::endl;
-				else if (value < 1)
+				else if (value < 0)
 					std::cerr << "Error: not a positive number" << std::endl;
 				else if (value > INT_MAX)
 					std::cerr << "Error: very large number" << std::endl;
@@ -112,7 +112,9 @@ int main( int ac, char **av )
 				}
 			}
 		}
-	}			
+	}
+	else
+		std::cout << "Incorrect file name" << std::endl;
 	file.close();
 
 	return 0;
